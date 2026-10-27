@@ -1,0 +1,44 @@
+# Repository Licensing Structure
+
+This repository contains academic review text, scientific diagrams, data ledgers, and automation code created by Snigdha Gorai (VIT-AP University). Materials are licensed under terms appropriate to their content type.
+
+---
+
+## 1. Original Academic Text, Documentation, and Scientific Diagrams
+
+All original literature review writing, synthesis documentation (`docs/`), scientific figures/diagrams (`diagrams/`, `assets/`), and extraction ledgers (`data/`) authored by Snigdha Gorai are licensed under the:
+
+**Creative Commons Attribution 4.0 International License (CC BY 4.0)**
+
+You are free to:
+- **Share** — copy and redistribute the material in any medium or format.
+- **Adapt** — remix, transform, and build upon the material for any purpose, even commercially.
+
+Under the following terms:
+- **Attribution** — You must give appropriate credit (citing Snigdha Gorai, VIT-AP University, and linking to this repository), provide a link to the license, and indicate if changes were made.
+
+To view a copy of this license, visit [https://creativecommons.org/licenses/by/4.0/](https://creativecommons.org/licenses/by/4.0/).
+
+---
+
+## 2. Software Code, Validation Scripts, and GitHub Actions
+
+All software scripts, automation workflows (`.github/`), Python tools, and code artifacts contained within this repository are licensed under the:
+
+**MIT License**
+
+Copyright (c) 2026 Snigdha Gorai
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+---
+
+## 3. Third-Party Scholarly Publications & Copyright Notice
+
+- **Third-Party Research Papers:** All cited research publications, conference papers, preprints, and associated datasets cited or referenced in this repository remain the intellectual property and copyright of their respective authors and publishers (including IEEE, CVF, ACM, PMLR, AAAI, and arXiv).
+- **No Redistribution of Copyrighted PDFs:** This public repository **does not host or redistribute third-party copyrighted full-text PDF files**. Links to the authoritative publisher DOIs and open-access repositories are provided in [`docs/references.md`](docs/references.md) and [`references/bibliography.bib`](references/bibliography.bib).
+- **PRISMA 2020 Guidelines:** The PRISMA 2020 reporting methodology and statement are distributed under the Creative Commons Attribution (CC BY 4.0) license by Page et al. (2021).

@@ -1,0 +1,131 @@
+name: Repository Quality & Structure Validation
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  validate-repository:
+    name: Audit Structure, CSVs, and BibTeX
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Verify Required Repository Files
+        run: |
+          echo "Checking essential files..."
+          required_files=(
+            "README.md"
+            "LICENSE"
+            "CITATION.cff"
+            "CONTRIBUTING.md"
+            "data/study-comparison.csv"
+            "data/screening-records.csv"
+            "data/unique-record-decisions.csv"
+            "data/search-strategy.md"
+            "docs/introduction.md"
+            "docs/research-questions.md"
+            "docs/methodology.md"
+            "docs/paper-comparison.md"
+            "docs/key-findings.md"
+            "docs/research-gaps.md"
+            "docs/limitations.md"
+            "docs/references.md"
+            "references/bibliography.bib"
+            "assets/banner.svg"
+            "diagrams/vlm-architecture.svg"
+            "diagrams/interpretability-methods.svg"
+            "diagrams/safety-representation-flow.svg"
+            "diagrams/prisma-flow.svg"
+            "diagrams/screening-pipeline.svg"
+            "diagrams/research-gaps-map.svg"
+          )
+          for file in "${required_files[@]}"; do
+            if [ ! -f "$file" ]; then
+              echo "::error::Missing critical file: $file"
+              exit 1
+            else
+              echo "✓ Found $file"
+            fi
+          done
+
+      - name: Validate CSV Integrity and Counts
+        run: |
+          python3 -c "
+          import csv, sys
+
+          def check_csv(path, min_rows):
+              with open(path, 'r', encoding='utf-8') as f:
+                  reader = list(csv.reader(f))
+                  header = reader[0]
+                  data = reader[1:]
+                  print(f'Checking {path}: {len(data)} rows, {len(header)} columns.')
+                  if len(data) < min_rows:
+                      print(f'ERROR: {path} has fewer than {min_rows} rows.')
+                      sys.exit(1)
+                  return len(data)
+
+          c1 = check_csv('data/study-comparison.csv', 8)
+          c2 = check_csv('data/screening-records.csv', 46)
+          c3 = check_csv('data/unique-record-decisions.csv', 38)
+          print('All CSV files successfully validated.')
+          "
+
+      - name: Check SVG Validity
+        run: |
+          python3 -c "
+          import xml.etree.ElementTree as ET
+          import glob, sys
+
+          svgs = glob.glob('**/*.svg', recursive=True)
+          print(f'Auditing {len(svgs)} SVG files...')
+          for s in svgs:
+              try:
+                  tree = ET.parse(s)
+                  root = tree.getroot()
+                  if not root.tag.endswith('svg'):
+                      print(f'ERROR: {s} root tag is not svg')
+                      sys.exit(1)
+                  print(f'✓ {s} valid XML SVG')
+              except Exception as e:
+                  print(f'ERROR in {s}: {e}')
+                  sys.exit(1)
+          "
+
+      - name: Validate Markdown Internal Links
+        run: |
+          python3 -c "
+          import re, os, glob, sys
+
+          md_files = glob.glob('**/*.md', recursive=True)
+          broken_links = 0
+          for md in md_files:
+              with open(md, 'r', encoding='utf-8') as f:
+                  content = f.read()
+              # Match relative markdown links [text](path)
+              links = re.findall(r'\[([^\]]+)\]\((?!http|mailto|#)([^)]+)\)', content)
+              dir_name = os.path.dirname(md)
+              for text, link in links:
+                  # Strip anchor
+                  clean_link = link.split('#')[0]
+                  if clean_link:
+                      target_path = os.path.normpath(os.path.join(dir_name, clean_link))
+                      if not os.path.exists(target_path):
+                          print(f'Broken link in {md}: {link} -> {target_path}')
+                          broken_links += 1
+          if broken_links > 0:
+              print(f'ERROR: Found {broken_links} broken relative links.')
+              sys.exit(1)
+          else:
+              print('✓ All internal Markdown relative links verified.')
+          "

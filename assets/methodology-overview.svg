@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 450" width="100%" height="100%">
+  <defs>
+    <linearGradient id="moBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080e1e"/>
+      <stop offset="50%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#161f38"/>
+    </linearGradient>
+    <linearGradient id="cardGrad6" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="900" height="450" fill="url(#moBg)"/>
+
+  <g transform="translate(40, 35)">
+    <text x="0" y="0" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="18" font-weight="800" fill="#ffffff">
+      Methodology &amp; Evidence Ledger Overview
+    </text>
+    <text x="0" y="22" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="11" font-weight="400" fill="#94a3b8">
+      PRISMA 2020-guided systematic identification, bounded captured-results audit, and qualitative appraisal.
+    </text>
+  </g>
+
+  <!-- 4 Summary Metric Cards -->
+  <g transform="translate(40, 80)">
+    <rect x="0" y="0" width="190" height="110" rx="8" fill="url(#cardGrad6)" stroke="#38bdf8" stroke-width="1"/>
+    <text x="20" y="28" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="11" font-weight="700" fill="#94a3b8">IDENTIFIED</text>
+    <text x="20" y="65" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="30" font-weight="800" fill="#38bdf8">46</text>
+    <text x="20" y="90" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="10" fill="#cbd5e1">30 Scholar + 16 Archive PDFs</text>
+
+    <rect x="210" y="0" width="190" height="110" rx="8" fill="url(#cardGrad6)" stroke="#a78bfa" stroke-width="1"/>
+    <text x="230" y="28" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="11" font-weight="700" fill="#94a3b8">UNIQUE SCREENED</text>
+    <text x="230" y="65" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="30" font-weight="800" fill="#a78bfa">38</text>
+    <text x="230" y="90" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="10" fill="#cbd5e1">8 duplicate appearances removed</text>
+
+    <rect x="420" y="0" width="190" height="110" rx="8" fill="url(#cardGrad6)" stroke="#f59e0b" stroke-width="1"/>
+    <text x="440" y="28" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="11" font-weight="700" fill="#94a3b8">FULL TEXTS ASSESSED</text>
+    <text x="440" y="65" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="30" font-weight="800" fill="#f59e0b">16</text>
+    <text x="440" y="90" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="10" fill="#cbd5e1">11 missing PDF candidates logged</text>
+
+    <rect x="630" y="0" width="190" height="110" rx="8" fill="#042f2e" stroke="#00f5d4" stroke-width="1.2"/>
+    <text x="650" y="28" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="11" font-weight="700" fill="#a7f3d0">CORE SYNTHESIS</text>
+    <text x="650" y="65" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="30" font-weight="800" fill="#00f5d4">8</text>
+    <text x="650" y="90" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="10" fill="#a7f3d0">Core VLM Empirical Studies</text>
+  </g>
+
+  <!-- Query Ledger Section -->
+  <g transform="translate(40, 215)">
+    <rect x="0" y="0" width="820" height="190" rx="10" fill="url(#cardGrad6)" stroke="#334155" stroke-width="1"/>
+    <text x="25" y="30" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="12" font-weight="700" fill="#e2e8f0">GOOGLE SCHOLAR SEARCH QUERIES (18 OCT 2026 AUDIT)</text>
+    
+    <g transform="translate(25, 45)">
+      <rect x="0" y="0" width="770" height="38" rx="5" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+      <text x="15" y="23" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="10" font-weight="700" fill="#38bdf8">S1 (~15,300 hits):</text>
+      <text x="130" y="23" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9.5" fill="#cbd5e1">("vision-language model" OR "multimodal large language model") AND (safety OR refusal OR jailbreak) AND (interpretability...)</text>
+
+      <rect x="0" y="46" width="770" height="38" rx="5" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+      <text x="15" y="69" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="10" font-weight="700" fill="#a78bfa">S2 (~12,700 hits):</text>
+      <text x="130" y="69" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9.5" fill="#cbd5e1">("vision-language model" OR VLM OR MLLM) AND ("activation patching" OR probing OR ablation) AND (safety OR refusal)</text>
+
+      <rect x="0" y="92" width="770" height="38" rx="5" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+      <text x="15" y="115" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="10" font-weight="700" fill="#00f5d4">S3 (~156 hits):</text>
+      <text x="130" y="115" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9.5" fill="#cbd5e1">("safety neurons" OR "safety circuit" OR "safety subspace") AND ("vision-language model" OR multimodal) AND (causal OR...)</text>
+    </g>
+  </g>
+</svg>

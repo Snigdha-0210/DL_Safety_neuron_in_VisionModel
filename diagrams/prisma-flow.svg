@@ -1,0 +1,158 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 820" width="100%" height="100%">
+  <defs>
+    <linearGradient id="pBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080e1e"/>
+      <stop offset="50%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#141c30"/>
+    </linearGradient>
+    <linearGradient id="boxGrad3" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1000" height="820" fill="url(#pBg)"/>
+
+  <!-- Header -->
+  <g transform="translate(50, 35)">
+    <rect x="0" y="0" width="170" height="24" rx="4" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+    <text x="85" y="16" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="10.5" font-weight="700" fill="#00f5d4" text-anchor="middle">PRISMA 2020 FLOW DIAGRAM</text>
+
+    <text x="0" y="52" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="20" font-weight="800" fill="#ffffff">
+      Systematic Identification, Deduplication, Screening, and Inclusion Flow
+    </text>
+    <text x="0" y="74" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="12" font-weight="400" fill="#94a3b8">
+      Bounded captured-results audit of 30 visible Google Scholar records (18 Oct 2026) and 16 retained research-paper PDFs.
+    </text>
+  </g>
+
+  <!-- Left Stage Labels Column -->
+  <g transform="translate(50, 130)">
+    <!-- Stage 1 -->
+    <rect x="0" y="0" width="130" height="130" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1"/>
+    <text x="65" y="65" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="11" font-weight="700" fill="#38bdf8" text-anchor="middle">IDENTIFICATION</text>
+    <text x="65" y="80" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9.5" fill="#94a3b8" text-anchor="middle">(n = 46 appearances)</text>
+
+    <!-- Stage 2 -->
+    <rect x="0" y="150" width="130" height="150" rx="8" fill="#1e293b" stroke="#a78bfa" stroke-width="1"/>
+    <text x="65" y="220" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="11" font-weight="700" fill="#a78bfa" text-anchor="middle">SCREENING</text>
+    <text x="65" y="235" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9.5" fill="#94a3b8" text-anchor="middle">(n = 38 unique)</text>
+
+    <!-- Stage 3 -->
+    <rect x="0" y="320" width="130" height="210" rx="8" fill="#1e293b" stroke="#f59e0b" stroke-width="1"/>
+    <text x="65" y="420" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="11" font-weight="700" fill="#f59e0b" text-anchor="middle">ELIGIBILITY</text>
+    <text x="65" y="435" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9.5" fill="#94a3b8" text-anchor="middle">(n = 16 assessed)</text>
+
+    <!-- Stage 4 -->
+    <rect x="0" y="550" width="130" height="100" rx="8" fill="#042f2e" stroke="#00f5d4" stroke-width="1.2"/>
+    <text x="65" y="598" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="11" font-weight="700" fill="#00f5d4" text-anchor="middle">INCLUDED</text>
+    <text x="65" y="614" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9.5" fill="#a7f3d0" text-anchor="middle">(n = 8 core)</text>
+  </g>
+
+  <!-- Flow Center Column (Main Path) -->
+  <g transform="translate(210, 130)">
+    <!-- Stage 1 Boxes: Two Discovery Sources -->
+    <rect x="0" y="0" width="340" height="60" rx="8" fill="url(#boxGrad3)" stroke="#38bdf8" stroke-width="1.2"/>
+    <text x="170" y="24" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="11" font-weight="700" fill="#e2e8f0" text-anchor="middle">Visible Google Scholar Entries Captured</text>
+    <text x="170" y="44" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="12" font-weight="800" fill="#38bdf8" text-anchor="middle">n = 30</text>
+    <text x="170" y="55" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="8.5" fill="#94a3b8" text-anchor="middle">(Queries S1: 10, S2: 10, S3: 10 on 18 Oct 2026)</text>
+
+    <rect x="360" y="0" width="340" height="60" rx="8" fill="url(#boxGrad3)" stroke="#38bdf8" stroke-width="1.2"/>
+    <text x="530" y="24" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="11" font-weight="700" fill="#e2e8f0" text-anchor="middle">Retained Research-Paper PDF Archive</text>
+    <text x="530" y="44" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="12" font-weight="800" fill="#38bdf8" text-anchor="middle">n = 16</text>
+    <text x="530" y="55" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="8.5" fill="#94a3b8" text-anchor="middle">(Course literature collection assembled for review)</text>
+
+    <!-- Total Identified Convergence Line -->
+    <path d="M 170 60 L 170 80 L 350 80" stroke="#38bdf8" stroke-width="1.5" fill="none"/>
+    <path d="M 530 60 L 530 80 L 350 80" stroke="#38bdf8" stroke-width="1.5" fill="none"/>
+    <path d="M 350 80 L 350 95" stroke="#38bdf8" stroke-width="1.5"/>
+
+    <!-- Deduplication Junction Box -->
+    <rect x="180" y="95" width="340" height="35" rx="6" fill="#1e293b" stroke="#475569" stroke-width="1"/>
+    <text x="350" y="117" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="11" font-weight="700" fill="#ffffff" text-anchor="middle">Total Record Appearances Identified: n = 46</text>
+
+    <!-- Side arrow to Deduplication Exclusion -->
+    <path d="M 520 112 L 560 112" stroke="#ef4444" stroke-width="1.5"/>
+    <rect x="560" y="85" width="180" height="55" rx="6" fill="#1c1917" stroke="#ef4444" stroke-width="1"/>
+    <text x="650" y="104" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="10.5" font-weight="700" fill="#fca5a5" text-anchor="middle">Duplicates Removed</text>
+    <text x="650" y="122" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="12" font-weight="800" fill="#ef4444" text-anchor="middle">n = 8</text>
+    <text x="650" y="134" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="8.5" fill="#fecaca" text-anchor="middle">(2 intra-Scholar; 6 Scholar-PDF overlap)</text>
+
+    <!-- Arrow Down to Stage 2: Screened -->
+    <path d="M 350 130 L 350 160" stroke="#a78bfa" stroke-width="1.5"/>
+
+    <!-- Unique Records Screened Box -->
+    <rect x="180" y="160" width="340" height="50" rx="8" fill="url(#boxGrad3)" stroke="#a78bfa" stroke-width="1.2"/>
+    <text x="350" y="183" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="11.5" font-weight="700" fill="#e2e8f0" text-anchor="middle">Unique Records Screened</text>
+    <text x="350" y="202" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="13" font-weight="800" fill="#a78bfa" text-anchor="middle">n = 38</text>
+
+    <!-- Excluded at Title/Abstract Arrow -->
+    <path d="M 520 185 L 560 185" stroke="#ef4444" stroke-width="1.5"/>
+    <rect x="560" y="155" width="180" height="60" rx="6" fill="#1c1917" stroke="#ef4444" stroke-width="1"/>
+    <text x="650" y="174" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="10" font-weight="700" fill="#fca5a5" text-anchor="middle">Excluded at Title/Abstract</text>
+    <text x="650" y="193" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="12" font-weight="800" fill="#ef4444" text-anchor="middle">n = 11</text>
+    <text x="650" y="206" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="8.5" fill="#fecaca" text-anchor="middle">Surveys, attack-only, out-of-scope</text>
+
+    <!-- Arrow Down to Remaining 27 -->
+    <path d="M 350 210 L 350 235" stroke="#a78bfa" stroke-width="1.5"/>
+
+    <!-- Unresolved Candidates Branch -->
+    <rect x="180" y="235" width="340" height="45" rx="6" fill="#1e293b" stroke="#475569" stroke-width="1"/>
+    <text x="350" y="254" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="10.5" font-weight="600" fill="#e2e8f0" text-anchor="middle">Remaining Eligible Candidates: n = 27</text>
+    <text x="350" y="268" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9" fill="#94a3b8" text-anchor="middle">(16 with archived PDF; 11 without archived PDF)</text>
+
+    <!-- Side Branch: Candidates without retained PDFs -->
+    <path d="M 520 257 L 560 257" stroke="#f59e0b" stroke-width="1.5"/>
+    <rect x="560" y="230" width="180" height="68" rx="6" fill="#292010" stroke="#f59e0b" stroke-width="1"/>
+    <text x="650" y="249" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9.5" font-weight="700" fill="#fde68a" text-anchor="middle">Candidates Without Retained PDFs</text>
+    <text x="650" y="268" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="12" font-weight="800" fill="#f59e0b" text-anchor="middle">n = 11</text>
+    <text x="650" y="282" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="8.5" fill="#fde68a" text-anchor="middle">Unresolved full-text appraisal</text>
+    <text x="650" y="292" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="8" fill="#fde68a" text-anchor="middle">(bounded corpus limitation)</text>
+
+    <!-- Arrow Down to Stage 3: Full Texts Assessed -->
+    <path d="M 350 280 L 350 330" stroke="#f59e0b" stroke-width="1.5"/>
+
+    <!-- Full-Text Reports Assessed Box -->
+    <rect x="180" y="330" width="340" height="55" rx="8" fill="url(#boxGrad3)" stroke="#f59e0b" stroke-width="1.2"/>
+    <text x="350" y="354" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="11.5" font-weight="700" fill="#e2e8f0" text-anchor="middle">Full-Text Research PDFs Assessed</text>
+    <text x="350" y="374" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="13" font-weight="800" fill="#f59e0b" text-anchor="middle">n = 16</text>
+
+    <!-- Side Branch: Full texts excluded -->
+    <path d="M 520 357 L 560 357" stroke="#ef4444" stroke-width="1.5"/>
+    <rect x="560" y="325" width="180" height="150" rx="6" fill="#1c1917" stroke="#ef4444" stroke-width="1"/>
+    <text x="650" y="345" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="10.5" font-weight="700" fill="#fca5a5" text-anchor="middle">Full-Text Exclusions</text>
+    <text x="650" y="364" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="13" font-weight="800" fill="#ef4444" text-anchor="middle">n = 8</text>
+    
+    <text x="575" y="386" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9" font-weight="700" fill="#fde68a">• Language-only context (n = 2):</text>
+    <text x="585" y="399" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="8.5" fill="#cbd5e1">Chen et al. (2025); Safe-SAIL (2026)</text>
+
+    <text x="575" y="418" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9" font-weight="700" fill="#fca5a5">• Topic / method scope (n = 6):</text>
+    <text x="585" y="431" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="8" fill="#fecaca">Aravindan (compositional failure)</text>
+    <text x="585" y="443" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="8" fill="#fecaca">Wang (data training, no mechanism)</text>
+    <text x="585" y="455" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="8" fill="#fecaca">Poppi (hyperbolic representation)</text>
+    <text x="585" y="467" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="8" fill="#fecaca">Shi (ScVLM scene understanding)</text>
+    <text x="585" y="479" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="8" fill="#fecaca">Rahmanzadehgervi (TAB visual debug)</text>
+    <text x="585" y="491" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="8" fill="#fecaca">Rathi &amp; Yu (vision classifier patching)</text>
+
+    <!-- Arrow Down to Stage 4: Included -->
+    <path d="M 350 385 L 350 550" stroke="#00f5d4" stroke-width="2"/>
+
+    <!-- Final Included Box -->
+    <rect x="180" y="550" width="340" height="90" rx="10" fill="#042f2e" stroke="#00f5d4" stroke-width="1.5"/>
+    <text x="350" y="578" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="12" font-weight="800" fill="#a7f3d0" text-anchor="middle">CORE STUDIES INCLUDED IN SYNTHESIS</text>
+    <text x="350" y="605" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="22" font-weight="900" fill="#00f5d4" text-anchor="middle">n = 8 VLM Studies</text>
+    <text x="350" y="626" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9.5" fill="#a7f3d0" text-anchor="middle">Li (2026), Xie (2026), Fu (2026), Gupta (2026),</text>
+    <text x="350" y="638" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9.5" fill="#a7f3d0" text-anchor="middle">Li (2025), Shi (2026), Wang (2025), D'Incà (2026)</text>
+  </g>
+
+  <!-- Footnote Callout Box at Bottom -->
+  <g transform="translate(50, 715)">
+    <rect x="0" y="0" width="900" height="55" rx="6" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+    <text x="18" y="22" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="10.5" font-weight="700" fill="#f59e0b">AUDIT TRANSPARENCY DISCLOSURE:</text>
+    <text x="18" y="40" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9.5" fill="#cbd5e1">
+      PRISMA 2020 reporting guidelines require transparent accounting of screening evidence. The 11 unresolved candidate records were not discarded;
+      they are explicitly accounted for as lacking retained full texts in the course archive. No meta-analysis was performed due to benchmark heterogeneity.
+    </text>
+  </g>
+</svg>

@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 450" width="100%" height="100%">
+  <defs>
+    <linearGradient id="rsBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080e1e"/>
+      <stop offset="50%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#161f38"/>
+    </linearGradient>
+    <linearGradient id="cardGrad7" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="900" height="450" fill="url(#rsBg)"/>
+
+  <g transform="translate(40, 35)">
+    <text x="0" y="0" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="18" font-weight="800" fill="#ffffff">
+      Research Synthesis Summary &amp; Core Takeaways
+    </text>
+    <text x="0" y="22" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="11" font-weight="400" fill="#94a3b8">
+      Key empirical lessons from mechanistic analysis of safety representations in vision-language models.
+    </text>
+  </g>
+
+  <!-- 3 Pillar Columns -->
+  <g transform="translate(40, 80)">
+    <!-- Pillar 1 -->
+    <rect x="0" y="0" width="260" height="325" rx="10" fill="url(#cardGrad7)" stroke="#38bdf8" stroke-width="1.2"/>
+    <rect x="0" y="0" width="260" height="34" rx="10" fill="#1e293b"/>
+    <text x="130" y="22" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="11" font-weight="700" fill="#38bdf8" text-anchor="middle">1. LOCALIZATION ≠ UNIVERSAL</text>
+
+    <g transform="translate(15, 50)">
+      <text x="0" y="15" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="10.5" font-weight="700" fill="#ffffff">Text vs Visual Disparity</text>
+      <text x="0" y="32" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9.5" fill="#cbd5e1">• Text refusal concentrates in a</text>
+      <text x="0" y="46" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9.5" fill="#cbd5e1">  small group of ~88 MLP neurons</text>
+      <text x="0" y="60" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9.5" fill="#cbd5e1">  (&lt;0.01% of model units).</text>
+      <text x="0" y="80" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9.5" fill="#cbd5e1">• Visual safety is distributed over</text>
+      <text x="0" y="94" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9.5" fill="#cbd5e1">  50+ feature directions.</text>
+      <text x="0" y="118" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9.5" font-weight="700" fill="#f87171">• Core Caution:</text>
+      <text x="0" y="134" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9" fill="#fca5a5">No single "safety neuron" controls</text>
+      <text x="0" y="148" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9" fill="#fca5a5">all multimodal safe behaviors.</text>
+    </g>
+
+    <!-- Pillar 2 -->
+    <rect x="280" y="0" width="260" height="325" rx="10" fill="url(#cardGrad7)" stroke="#a78bfa" stroke-width="1.2"/>
+    <rect x="280" y="0" width="260" height="34" rx="10" fill="#1e293b"/>
+    <text x="410" y="22" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="11" font-weight="700" fill="#a78bfa" text-anchor="middle">2. PROBING VS INTERVENTION</text>
+
+    <g transform="translate(295, 50)">
+      <text x="0" y="15" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="10.5" font-weight="700" fill="#ffffff">Correlation vs Causation</text>
+      <text x="0" y="32" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9.5" fill="#cbd5e1">• Probing proves safety signals are</text>
+      <text x="0" y="46" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9.5" fill="#cbd5e1">  decodable from activations.</text>
+      <text x="0" y="66" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9.5" fill="#cbd5e1">• Causal interventions (CARE,</text>
+      <text x="0" y="80" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9.5" fill="#cbd5e1">  ASTRA, IAR, ablation) test</text>
+      <text x="0" y="94" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9.5" fill="#cbd5e1">  behavior under manipulation.</text>
+      <text x="0" y="118" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9.5" font-weight="700" fill="#38bdf8">• Attack vs Defense Dual-Use:</text>
+      <text x="0" y="134" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9.5" fill="#94a3b8">Circuit knowledge enables both</text>
+      <text x="0" y="148" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9.5" fill="#94a3b8">59.7% ASR attacks and defenses.</text>
+    </g>
+
+    <!-- Pillar 3 -->
+    <rect x="560" y="0" width="260" height="325" rx="10" fill="url(#cardGrad7)" stroke="#00f5d4" stroke-width="1.2"/>
+    <rect x="560" y="0" width="260" height="34" rx="10" fill="#1e293b"/>
+    <text x="690" y="22" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="11" font-weight="700" fill="#00f5d4" text-anchor="middle">3. SAFETY–UTILITY BALANCE</text>
+
+    <g transform="translate(575, 50)">
+      <text x="0" y="15" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="10.5" font-weight="700" fill="#ffffff">Grounding Preservation</text>
+      <text x="0" y="32" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9.5" fill="#cbd5e1">• Safety alignment can override</text>
+      <text x="0" y="46" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9.5" fill="#cbd5e1">  legitimate visual grounding,</text>
+      <text x="0" y="60" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9.5" fill="#cbd5e1">  causing severe over-refusal.</text>
+      <text x="0" y="80" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9.5" fill="#cbd5e1">• Interventions must preserve</text>
+      <text x="0" y="94" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9.5" fill="#cbd5e1">  knowledge &amp; task capabilities.</text>
+      <text x="0" y="118" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9.5" font-weight="700" fill="#00f5d4">• Deployment Mandate:</text>
+      <text x="0" y="134" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9.5" fill="#a7f3d0">Harmful compliance and over-refusal</text>
+      <text x="0" y="148" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9.5" fill="#a7f3d0">must be evaluated simultaneously.</text>
+    </g>
+  </g>
+</svg>

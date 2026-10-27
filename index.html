@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mechanistic Interpretability of Safety Neurons in Vision-Language Models | Research Portal</title>
+  <meta name="description" content="A Structured Literature Review of Probing, Activation Patching, and Localized Safety Representations in Vision-Language Models by Snigdha Gorai (VIT-AP University).">
+  <style>
+    :root {
+      --bg-dark: #070c18;
+      --bg-card: #0f172a;
+      --bg-card-hover: #1e293b;
+      --border-color: #334155;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --accent-cyan: #00f5d4;
+      --accent-blue: #38bdf8;
+      --accent-purple: #a78bfa;
+      --accent-coral: #ff758f;
+      --accent-amber: #f59e0b;
+      --accent-green: #10b981;
+      --font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: var(--font-stack);
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+    a { color: var(--accent-cyan); text-decoration: none; transition: color 0.2s; }
+    a:hover { color: var(--accent-blue); }
+
+    /* Navigation Bar */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(7, 12, 24, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-color);
+      padding: 0.8rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo-container { display: flex; align-items: center; gap: 0.75rem; }
+    .logo-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--accent-cyan); box-shadow: 0 0 10px var(--accent-cyan); }
+    .logo-text { font-size: 1rem; font-weight: 700; color: #fff; letter-spacing: -0.2px; }
+    .nav-links { display: flex; gap: 1.5rem; list-style: none; font-size: 0.9rem; font-weight: 500; }
+    .nav-links a { color: var(--text-muted); }
+    .nav-links a:hover { color: var(--accent-cyan); }
+
+    /* Hero Section */
+    .hero {
+      padding: 4rem 2rem 3rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.35rem 1rem;
+      background: rgba(30, 41, 59, 0.8);
+      border: 1px solid var(--border-color);
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--accent-cyan);
+      margin-bottom: 1.5rem;
+    }
+    .hero h1 {
+      font-size: 2.8rem;
+      font-weight: 800;
+      letter-spacing: -1px;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+      background: linear-gradient(135deg, #ffffff 40%, var(--accent-cyan) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero p.subtitle {
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      max-width: 850px;
+      margin: 0 auto 2rem;
+    }
+    .metadata-bar {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+      padding: 1rem 1.5rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      max-width: 900px;
+      margin: 0 auto 2.5rem;
+      font-size: 0.88rem;
+    }
+    .meta-item { display: flex; flex-direction: column; align-items: center; }
+    .meta-label { font-size: 0.72rem; font-weight: 700; color: var(--text-muted); letter-spacing: 0.5px; text-transform: uppercase; }
+    .meta-val { font-weight: 600; color: #fff; margin-top: 0.2rem; }
+
+    /* Container */
+    .container { max-width: 1200px; margin: 0 auto; padding: 2rem; }
+
+    /* Section Headers */
+    .section-title-wrap {
+      margin-bottom: 2rem;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 1rem;
+    }
+    .section-tag { font-size: 0.8rem; font-weight: 700; color: var(--accent-cyan); text-transform: uppercase; letter-spacing: 1px; }
+    .section-title { font-size: 1.9rem; font-weight: 800; color: #fff; margin-top: 0.2rem; }
+    .section-desc { color: var(--text-muted); font-size: 0.95rem; margin-top: 0.3rem; }
+
+    /* Visual Media Containers */
+    .diagram-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 2.5rem;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    }
+    .diagram-card img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+    .diagram-caption {
+      margin-top: 1rem;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      text-align: left;
+    }
+
+    /* Cards Grid */
+    .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(480px, 1fr)); gap: 1.5rem; margin-bottom: 2.5rem; }
+    .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; margin-bottom: 2.5rem; }
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 1.5rem;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+    .card:hover { transform: translateY(-3px); border-color: var(--accent-cyan); }
+    .card h3 { font-size: 1.15rem; font-weight: 700; color: #fff; margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem; }
+    .card p { font-size: 0.92rem; color: var(--text-muted); margin-bottom: 0.75rem; }
+
+    /* Interactive Table */
+    .table-container {
+      overflow-x: auto;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      margin-bottom: 2.5rem;
+    }
+    table { width: 100%; border-collapse: collapse; font-size: 0.88rem; text-align: left; }
+    th {
+      background: #162036;
+      color: #e2e8f0;
+      font-weight: 700;
+      padding: 1rem;
+      border-bottom: 2px solid var(--border-color);
+      white-space: nowrap;
+    }
+    td {
+      padding: 1rem;
+      border-bottom: 1px solid var(--border-color);
+      color: #cbd5e1;
+      vertical-align: top;
+    }
+    tr:hover td { background: rgba(30, 41, 59, 0.5); }
+    .tag {
+      display: inline-block;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    .tag-blue { background: rgba(56, 189, 248, 0.15); color: #38bdf8; }
+    .tag-green { background: rgba(16, 185, 129, 0.15); color: #10b981; }
+    .tag-coral { background: rgba(255, 117, 143, 0.15); color: #ff758f; }
+
+    /* Search Box */
+    .search-bar {
+      margin-bottom: 1rem;
+      display: flex;
+      gap: 1rem;
+    }
+    .search-input {
+      flex: 1;
+      padding: 0.75rem 1rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      color: #fff;
+      font-size: 0.9rem;
+    }
+    .search-input:focus { outline: none; border-color: var(--accent-cyan); }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border-color);
+      padding: 3rem 2rem;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      background: #040812;
+    }
+    .footer-links { display: flex; justify-content: center; gap: 1.5rem; margin-bottom: 1rem; }
+
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2rem; }
+      .grid-2, .grid-3 { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Header Navigation -->
+  <header>
+    <div class="logo-container">
+      <div class="logo-dot"></div>
+      <div class="logo-text">VLM Safety Neurons Review</div>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#overview">Overview</a></li>
+      <li><a href="#architecture">Architecture</a></li>
+      <li><a href="#methods">Methods</a></li>
+      <li><a href="#prisma">PRISMA Flow</a></li>
+      <li><a href="#studies">Studies Matrix</a></li>
+      <li><a href="#findings">Findings</a></li>
+      <li><a href="#gaps">Research Gaps</a></li>
+      <li><a href="#citation">Citation</a></li>
+    </ul>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-badge">
+      <span>●</span> PRISMA 2020-Guided Systematic Literature Review (2020–2026)
+    </div>
+    <h1>Mechanistic Interpretability of Safety Neurons in Vision-Language Models</h1>
+    <p class="subtitle">A Structured Literature Review of Probing, Activation Patching, and Localized Safety Representations</p>
+
+    <!-- Academic Metadata Bar -->
+    <div class="metadata-bar">
+      <div class="meta-item">
+        <span class="meta-label">Researcher</span>
+        <span class="meta-val">Snigdha Gorai (24BCE7185)</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Institution</span>
+        <span class="meta-val">VIT-AP University</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Course</span>
+        <span class="meta-val">CSE4006 Deep Learning</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Assessment</span>
+        <span class="meta-val">DA-2 &amp; DA-3 (2026–27)</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Synthesis Corpus</span>
+        <span class="meta-val">8 Core Empirical VLM Studies</span>
+      </div>
+    </div>
+
+    <!-- Hero Banner Image -->
+    <div class="diagram-card" style="margin-top: 1rem;">
+      <img src="assets/banner.svg" alt="Mechanistic Interpretability of Safety Neurons Banner">
+    </div>
+  </section>
+
+  <!-- Main Content Container -->
+  <main class="container">
+
+    <!-- Section 1: Research Overview -->
+    <section id="overview" style="margin-bottom: 4rem;">
+      <div class="section-title-wrap">
+        <span class="section-tag">Context &amp; Motivation</span>
+        <h2 class="section-title">Research Overview &amp; The Multimodal Safety Paradox</h2>
+        <p class="section-desc">Why black-box evaluation fails to explain why vision-language models bypass text alignment when exposed to visual inputs.</p>
+      </div>
+
+      <div class="grid-2">
+        <div class="card">
+          <h3>The Multimodal Asymmetry</h3>
+          <p>Vision-Language Models (VLMs) unite high-capacity visual encoders with autoregressive language models. While language backbones undergo extensive safety alignment (via RLHF/DPO) to refuse malicious text prompts, that alignment routinely breaks down when harmful instructions are embedded in images (e.g. typographic text or adversarial scene perturbations).</p>
+          <p>Black-box output testing measures whether a failure happened, but it cannot explain <em>how</em> or <em>where</em> the failure occurred inside the network.</p>
+        </div>
+        <div class="card">
+          <h3>Mechanistic Interpretability</h3>
+          <p>Mechanistic interpretability reverse-engineers internal neural activations. Rather than evaluating final tokens alone, it analyzes whether safety is governed by compact "safety neurons" in MLP blocks, cross-modal attention heads, or diffuse activation subspaces.</p>
+          <p>Crucially, this review distinguishes observational correlation (linear probing) from counterfactual causal intervention (neuron ablation, activation steering, and subspace projection).</p>
+        </div>
+      </div>
+
+      <!-- Conceptual Map Graphic -->
+      <div class="diagram-card">
+        <img src="assets/research-summary.svg" alt="Research Synthesis Summary">
+        <div class="diagram-caption"><strong>Figure 1:</strong> Core synthesis pillars summarizing empirical findings across the 8 core studies.</div>
+      </div>
+    </section>
+
+    <!-- Section 2: VLM Architecture & Interception Points -->
+    <section id="architecture" style="margin-bottom: 4rem;">
+      <div class="section-title-wrap">
+        <span class="section-tag">Model Mechanics</span>
+        <h2 class="section-title">VLM Architecture &amp; Five Safety Interception Points</h2>
+        <p class="section-desc">Representative multimodal foundation model pipeline highlighting where mechanistic interpretability interventions operate.</p>
+      </div>
+
+      <div class="diagram-card">
+        <img src="diagrams/vlm-architecture.svg" alt="Vision-Language Model Architecture and Safety Interception Points">
+        <div class="diagram-caption"><strong>Figure 2:</strong> Representative conceptual pipeline showing visual encoding, cross-modal projection, transformer layers, and five empirical safety analysis interception points.</div>
+      </div>
+    </section>
+
+    <!-- Section 3: Interpretability Methods & Causal Spectrum -->
+    <section id="methods" style="margin-bottom: 4rem;">
+      <div class="section-title-wrap">
+        <span class="section-tag">Methodology Spectrum</span>
+        <h2 class="section-title">Mechanistic Workflow &amp; Causal Hierarchy</h2>
+        <p class="section-desc">Establishing the scientific boundary between correlational probing and counterfactual causal interventions.</p>
+      </div>
+
+      <div class="diagram-card">
+        <img src="diagrams/interpretability-methods.svg" alt="Interpretability Workflow and Causal Hierarchy">
+        <div class="diagram-caption"><strong>Figure 3:</strong> Five-stage mechanistic workflow and four distinct intervention methodologies mapped along the causal evidence spectrum.</div>
+      </div>
+
+      <div class="diagram-card">
+        <img src="diagrams/safety-representation-flow.svg" alt="Safety Representation Flow: Text vs. Vision Disparity">
+        <div class="diagram-caption"><strong>Figure 4:</strong> Empirical comparison showing compact text refusal (~88 neurons, &lt;0.01%) versus distributed visual safety (&gt;50 GEVD directions) based on Li et al. (2026).</div>
+      </div>
+    </section>
+
+    <!-- Section 4: PRISMA 2020 Screening Flow -->
+    <section id="prisma" style="margin-bottom: 4rem;">
+      <div class="section-title-wrap">
+        <span class="section-tag">Systematic Review Flow</span>
+        <h2 class="section-title">PRISMA 2020 Identification &amp; Screening Audit</h2>
+        <p class="section-desc">Bounded captured-results audit reconciling 46 record appearances into 38 unique records and 8 core synthesis studies.</p>
+      </div>
+
+      <div class="diagram-card">
+        <img src="diagrams/prisma-flow.svg" alt="PRISMA 2020 Flow Diagram">
+        <div class="diagram-caption"><strong>Figure 5:</strong> PRISMA 2020 flow diagram displaying audited counts for identification, deduplication, screening, and inclusion.</div>
+      </div>
+
+      <div class="diagram-card">
+        <img src="diagrams/screening-pipeline.svg" alt="Screening and Audit Pipeline">
+        <div class="diagram-caption"><strong>Figure 6:</strong> Lineage from Google Scholar queries (18 Oct 2026) to canonical deduplication ledger and synthesis matrix.</div>
+      </div>
+    </section>
+
+    <!-- Section 5: Master Study Comparison Matrix -->
+    <section id="studies" style="margin-bottom: 4rem;">
+      <div class="section-title-wrap">
+        <span class="section-tag">Literature Evidence</span>
+        <h2 class="section-title">Comparative Synthesis of the 8 Core Studies</h2>
+        <p class="section-desc">Verified extraction matrix detailing models, datasets, reported metrics, and research gaps across all included papers.</p>
+      </div>
+
+      <div class="search-bar">
+        <input type="text" id="tableFilter" class="search-input" placeholder="Search studies by author, method, model, or dataset..." onkeyup="filterTable()">
+      </div>
+
+      <div class="table-container">
+        <table id="studiesTable">
+          <thead>
+            <tr>
+              <th>Study &amp; Year</th>
+              <th>Venue / Status</th>
+              <th>Internal Unit Analyzed</th>
+              <th>Method &amp; Intervention</th>
+              <th>Reported Metrics / Findings</th>
+              <th>Critical Limitations</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Li et al. (2026)</strong></td>
+              <td><span class="tag tag-blue">EMNLP 2026</span></td>
+              <td>MLP neurons &amp; GEVD directions</td>
+              <td>Neuron localization, iterative ablation across 10 VLMs</td>
+              <td>~88 text-safety neurons (&lt;0.01%); text refusal in ~5 GEVD directions vs visual safety in &gt;50 directions.</td>
+              <td>No single universal safety neuron; prompt and model dependent.</td>
+            </tr>
+            <tr>
+              <td><strong>Xie et al. (2026)</strong></td>
+              <td><span class="tag tag-blue">ICML 2026</span></td>
+              <td>Safety circuits &amp; attention heads</td>
+              <td>Linear probing &amp; SCIA circuit intervention attack</td>
+              <td>59.7% average Attack Success Rate (ASR) across open-source VLMs; transferable across models.</td>
+              <td>Attack-oriented vulnerability study; does not measure benign utility preservation.</td>
+            </tr>
+            <tr>
+              <td><strong>Fu et al. (2026)</strong></td>
+              <td><span class="tag tag-blue">CVPR 2026</span></td>
+              <td>Unsafe channels &amp; dual subspaces</td>
+              <td>Causal mediation &amp; CARE subspace projection</td>
+              <td>Suppresses unsafe responses; transfers to unseen attacks while retaining multimodal task performance.</td>
+              <td>Subspace basis construction requires calibrated contrastive pairs.</td>
+            </tr>
+            <tr>
+              <td><strong>Gupta &amp; Chakraborty (2026)</strong></td>
+              <td><span class="tag tag-blue">arXiv:2608.18628</span></td>
+              <td>Hidden states &amp; decoding layers</td>
+              <td>Hidden-state analysis &amp; targeted activation intervention</td>
+              <td>Visual evidence remains influential during safety abstention; targeted intervention restores grounded answering.</td>
+              <td>Must distinguish appropriate refusal from harmful compliance and over-refusal.</td>
+            </tr>
+            <tr>
+              <td><strong>Li et al. (2025)</strong></td>
+              <td><span class="tag tag-blue">AAAI 2025</span></td>
+              <td>Layer &amp; head activations</td>
+              <td>Inference-time activation revision vectors (IAR)</td>
+              <td>Reported ASR drops: 48.94% (SafeBench), 34.34% (Safe-Unsafe), 43.92% (Unsafe), 52.98% (MM-SafetyBench).</td>
+              <td>Benchmark-specific revision vectors; needs evaluation against adaptive adversaries.</td>
+            </tr>
+            <tr>
+              <td><strong>Shi et al. (2026)</strong></td>
+              <td><span class="tag tag-blue">arXiv:2604.08881</span></td>
+              <td>Multilingual safety neurons</td>
+              <td>Safety neuron identification &amp; targeted tuning (Precise Shield)</td>
+              <td>Targeted enhancement improves safety across languages while preserving general reasoning.</td>
+              <td>Cross-lingual transfer to low-resource languages requires further testing.</td>
+            </tr>
+            <tr>
+              <td><strong>Wang et al. (2025)</strong></td>
+              <td><span class="tag tag-blue">CVPR 2025</span></td>
+              <td>Harmful representation directions</td>
+              <td>ASTRA: Adaptive activation steering</td>
+              <td>Strong empirical resistance against jailbreaks with minimal degradation on benign inputs.</td>
+              <td>Steering directions can be prompt-dependent; needs white-box adaptive evaluation.</td>
+            </tr>
+            <tr>
+              <td><strong>D’Incà et al. (2026)</strong></td>
+              <td><span class="tag tag-blue">WACV 2026</span></td>
+              <td>Activation-associated weights</td>
+              <td>SafeGround evaluation &amp; Unsafe Weights Manipulation (UWM)</td>
+              <td>Favorable safety-to-knowledge retention trade-off compared to fine-tuning.</td>
+              <td>Static parameter negation is adjacent to, but distinct from, dynamic neuron intervention.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Section 6: Key Findings -->
+    <section id="findings" style="margin-bottom: 4rem;">
+      <div class="section-title-wrap">
+        <span class="section-tag">Scientific Synthesis</span>
+        <h2 class="section-title">Key Thematic Findings</h2>
+        <p class="section-desc">Core insights synthesized across the empirical literature.</p>
+      </div>
+
+      <div class="grid-3">
+        <div class="card">
+          <h3>1. No Universal Safety Switch</h3>
+          <p>While text refusal can be linked to ~88 localized MLP neurons (<0.01% of units), visual safety is distributed across more than 50 directions (Li et al., 2026). No single universal safety neuron governs all multimodal behavior.</p>
+        </div>
+        <div class="card">
+          <h3>2. Probing Limits &amp; Dual-Use</h3>
+          <p>Decodability of safety features via probing does not prove downstream causal execution. Furthermore, Xie et al. (2026) show circuit discovery is dual-use: perturbing safety circuits achieves 59.7% attack success across models.</p>
+        </div>
+        <div class="card">
+          <h3>3. Grounding vs. Over-Refusal</h3>
+          <p>Safety alignment frequently acts as a blanket suppressor, destroying legitimate visual grounding (Gupta &amp; Chakraborty, 2026). Trustworthy deployment mandates simultaneous measurement of harmful compliance and over-refusal.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 7: Research Gaps & Future Directions -->
+    <section id="gaps" style="margin-bottom: 4rem;">
+      <div class="section-title-wrap">
+        <span class="section-tag">Roadmap</span>
+        <h2 class="section-title">Evidence-Supported Research Gaps</h2>
+        <p class="section-desc">Five essential research frontiers identified from review findings.</p>
+      </div>
+
+      <div class="diagram-card">
+        <img src="diagrams/research-gaps-map.svg" alt="Research Gaps Map">
+        <div class="diagram-caption"><strong>Figure 7:</strong> Five core research gaps and concrete future research agendas.</div>
+      </div>
+    </section>
+
+    <!-- Section 8: Citation & Academic Integrity -->
+    <section id="citation" style="margin-bottom: 4rem;">
+      <div class="section-title-wrap">
+        <span class="section-tag">Academic Integrity</span>
+        <h2 class="section-title">Citation &amp; Repository Resources</h2>
+        <p class="section-desc">Transparent academic disclosure and standardized citation records.</p>
+      </div>
+
+      <div class="card" style="margin-bottom: 1.5rem;">
+        <h3>Academic Identity Disclaimer</h3>
+        <p>This repository presents a <strong>systematic literature review and theoretical/methodological synthesis</strong> submitted for university assessment (VIT-AP University, CSE4006 Deep Learning). The researcher (Snigdha Gorai) did not personally train, fine-tune, or experimentally reproduce the deep-learning models or interventions described in the reviewed papers. All quantitative figures are attributed strictly to the original publications.</p>
+      </div>
+
+      <div class="card">
+        <h3>Cite This Review (BibTeX)</h3>
+        <pre style="background: #0b132b; padding: 1rem; border-radius: 8px; color: #38bdf8; overflow-x: auto; font-size: 0.82rem;"><code>@misc{gorai2026mechanistic,
+  author       = {Gorai, Snigdha},
+  title        = {Mechanistic Interpretability of Safety Neurons in Vision-Language Models: A Structured Literature Review of Probing, Activation Patching, and Localized Safety Representations},
+  year         = {2026},
+  howpublished = {GitHub Repository},
+  url          = {https://github.com/Snigdha-0210/DL_Safety_neuron_in_VisionModel},
+  note         = {Digital Assessment 2 & 3, CSE4006 Deep Learning, VIT-AP University}
+}</code></pre>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-links">
+      <a href="README.md">README</a>
+      <a href="docs/introduction.md">Introduction</a>
+      <a href="docs/methodology.md">Methodology</a>
+      <a href="docs/paper-comparison.md">Study Matrix</a>
+      <a href="docs/references.md">References</a>
+      <a href="LICENSE">License (CC BY 4.0 / MIT)</a>
+    </div>
+    <p>Mechanistic Interpretability of Safety Neurons in Vision-Language Models &bull; Snigdha Gorai &bull; VIT-AP University &bull; 2026</p>
+  </footer>
+
+  <!-- Interactive Search Script -->
+  <script>
+    function filterTable() {
+      const input = document.getElementById('tableFilter');
+      const filter = input.value.toLowerCase();
+      const table = document.getElementById('studiesTable');
+      const tr = table.getElementsByTagName('tr');
+
+      for (let i = 1; i < tr.length; i++) {
+        const text = tr[i].textContent.toLowerCase();
+        if (text.indexOf(filter) > -1) {
+          tr[i].style.display = '';
+        } else {
+          tr[i].style.display = 'none';
+        }
+      }
+    }
+  </script>
+</body>
+</html>

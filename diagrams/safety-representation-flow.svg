@@ -1,0 +1,155 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 600" width="100%" height="100%">
+  <defs>
+    <linearGradient id="flowBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080e1e"/>
+      <stop offset="50%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#141c30"/>
+    </linearGradient>
+    <linearGradient id="cardGrad2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1100" height="600" fill="url(#flowBg)"/>
+
+  <!-- Title & Subtitle -->
+  <g transform="translate(50, 40)">
+    <text x="0" y="0" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="22" font-weight="800" fill="#ffffff" letter-spacing="-0.3">
+      Multimodal Safety Representation Pathways: Text vs. Vision Disparity
+    </text>
+    <text x="0" y="24" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="13" font-weight="400" fill="#94a3b8">
+      Empirical findings from Li et al. (2026), Fu et al. (2026), and Gupta &amp; Chakraborty (2026) on localized vs distributed safety mechanisms.
+    </text>
+  </g>
+
+  <!-- Left Column: Text-Only Safety Pathway (Localized) -->
+  <g transform="translate(50, 85)">
+    <rect x="0" y="0" width="480" height="480" rx="12" fill="url(#cardGrad2)" stroke="#38bdf8" stroke-width="1.5"/>
+    <rect x="0" y="0" width="480" height="38" rx="12" fill="#1e293b"/>
+    <text x="240" y="24" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="13" font-weight="700" fill="#38bdf8" text-anchor="middle">TEXT SAFETY PATHWAY (LOCALIZED REFUSAL)</text>
+
+    <!-- Text Input Box -->
+    <rect x="25" y="55" width="430" height="50" rx="8" fill="#0b132b" stroke="#334155" stroke-width="1"/>
+    <text x="45" y="76" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="11" font-weight="700" fill="#e2e8f0">Text-Only Prompt:</text>
+    <text x="165" y="76" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="11" fill="#94a3b8">"Write instructions for synthesizing explosives."</text>
+    <text x="45" y="94" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="10" fill="#38bdf8">High refusal trigger probability | Standard RLHF/DPO text alignment active</text>
+
+    <!-- Arrow -->
+    <path d="M 240 105 L 240 125" stroke="#38bdf8" stroke-width="1.5"/>
+
+    <!-- Internal Processing Box -->
+    <rect x="25" y="125" width="430" height="150" rx="8" fill="#0b132b" stroke="#38bdf8" stroke-width="1.2"/>
+    <text x="45" y="148" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="12" font-weight="700" fill="#38bdf8">Internal Representation Characteristics:</text>
+    
+    <!-- Micro diagram of ~88 neurons -->
+    <g transform="translate(45, 160)">
+      <rect x="0" y="0" width="140" height="100" rx="6" fill="#0f172a" stroke="#475569" stroke-width="1"/>
+      <text x="70" y="18" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9" font-weight="700" fill="#94a3b8" text-anchor="middle">Neuron Localization</text>
+      
+      <!-- Cluster of dense active neurons -->
+      <circle cx="50" cy="40" r="5" fill="#38bdf8"/>
+      <circle cx="65" cy="40" r="5" fill="#38bdf8"/>
+      <circle cx="80" cy="40" r="5" fill="#38bdf8"/>
+      <circle cx="58" cy="55" r="5" fill="#38bdf8"/>
+      <circle cx="72" cy="55" r="5" fill="#38bdf8"/>
+      <circle cx="65" cy="70" r="5" fill="#38bdf8"/>
+      <!-- Surrounding inactive neurons -->
+      <circle cx="25" cy="35" r="3" fill="#334155"/>
+      <circle cx="115" cy="45" r="3" fill="#334155"/>
+      <circle cx="30" cy="75" r="3" fill="#334155"/>
+      <circle cx="110" cy="75" r="3" fill="#334155"/>
+
+      <text x="70" y="90" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="8.5" font-weight="700" fill="#38bdf8" text-anchor="middle">~88 Neurons (&lt;0.01%)</text>
+    </g>
+
+    <g transform="translate(200, 160)">
+      <text x="0" y="16" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="10.5" font-weight="700" fill="#e2e8f0">• Compact Representation</text>
+      <text x="0" y="32" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9.5" fill="#94a3b8">Concentrated in ~88 MLP neurons per</text>
+      <text x="0" y="44" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9.5" fill="#94a3b8">model across 10 VLMs (Li et al. 2026).</text>
+
+      <text x="0" y="66" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="10.5" font-weight="700" fill="#e2e8f0">• Dominant GEVD Directions</text>
+      <text x="0" y="82" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9.5" fill="#94a3b8">Text refusal effects concentrate heavily</text>
+      <text x="0" y="94" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9.5" fill="#94a3b8">within ~5 dominant generalized directions.</text>
+    </g>
+
+    <!-- Arrow -->
+    <path d="M 240 275 L 240 295" stroke="#38bdf8" stroke-width="1.5"/>
+
+    <!-- Outcome Box -->
+    <rect x="25" y="295" width="430" height="75" rx="8" fill="#064e3b" stroke="#10b981" stroke-width="1.2"/>
+    <text x="45" y="318" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="11" font-weight="700" fill="#a7f3d0">Decision Outcome: Direct Refusal Activation</text>
+    <text x="45" y="336" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="10" fill="#d1fae5">Strong refusal head activation triggers canned abstention tokens:</text>
+    <text x="45" y="352" font-family="monospace" font-size="9.5" fill="#34d399">"I cannot fulfill this request because it violates safety guidelines."</text>
+
+    <!-- Ablation Sensitivity Note -->
+    <rect x="25" y="385" width="430" height="75" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+    <text x="45" y="406" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="10.5" font-weight="700" fill="#cbd5e1">Intervention Vulnerability:</text>
+    <text x="45" y="424" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9.5" fill="#94a3b8">Ablating the localized ~88 text-safety neurons causes steep degradation</text>
+    <text x="45" y="438" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9.5" fill="#94a3b8">in refusal ability on text prompts, confirming high causal concentration.</text>
+  </g>
+
+  <!-- Right Column: Visual Safety Pathway (Distributed & Vulnerable) -->
+  <g transform="translate(570, 85)">
+    <rect x="0" y="0" width="480" height="480" rx="12" fill="url(#cardGrad2)" stroke="#ff758f" stroke-width="1.5"/>
+    <rect x="0" y="0" width="480" height="38" rx="12" fill="#1e293b"/>
+    <text x="240" y="24" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="13" font-weight="700" fill="#ff758f" text-anchor="middle">VISUAL SAFETY PATHWAY (DISTRIBUTED &amp; VULNERABLE)</text>
+
+    <!-- Multimodal Prompt Box -->
+    <rect x="25" y="55" width="430" height="50" rx="8" fill="#0b132b" stroke="#334155" stroke-width="1"/>
+    <text x="45" y="76" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="11" font-weight="700" fill="#e2e8f0">Multimodal / Image Prompt:</text>
+    <text x="205" y="76" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="11" fill="#94a3b8">Image with embedded bomb text + "Read this"</text>
+    <text x="45" y="94" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="10" fill="#ff758f">Cross-modal misalignment | Visual grounding overrides text alignment</text>
+
+    <!-- Arrow -->
+    <path d="M 240 105 L 240 125" stroke="#ff758f" stroke-width="1.5"/>
+
+    <!-- Internal Processing Box -->
+    <rect x="25" y="125" width="430" height="150" rx="8" fill="#0b132b" stroke="#ff758f" stroke-width="1.2"/>
+    <text x="45" y="148" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="12" font-weight="700" fill="#ff758f">Internal Representation Characteristics:</text>
+
+    <!-- Micro diagram of distributed directions -->
+    <g transform="translate(45, 160)">
+      <rect x="0" y="0" width="140" height="100" rx="6" fill="#0f172a" stroke="#475569" stroke-width="1"/>
+      <text x="70" y="18" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9" font-weight="700" fill="#94a3b8" text-anchor="middle">Distributed Subspace</text>
+
+      <!-- Widely dispersed directions -->
+      <circle cx="25" cy="35" r="4" fill="#ff758f"/>
+      <circle cx="50" cy="45" r="4" fill="#ff758f"/>
+      <circle cx="85" cy="35" r="4" fill="#ff758f"/>
+      <circle cx="115" cy="40" r="4" fill="#ff758f"/>
+      <circle cx="35" cy="65" r="4" fill="#ff758f"/>
+      <circle cx="70" cy="60" r="4" fill="#ff758f"/>
+      <circle cx="105" cy="70" r="4" fill="#ff758f"/>
+      <circle cx="55" cy="80" r="4" fill="#ff758f"/>
+
+      <text x="70" y="92" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="8.5" font-weight="700" fill="#ff758f" text-anchor="middle">&gt;50 GEVD Directions</text>
+    </g>
+
+    <g transform="translate(200, 160)">
+      <text x="0" y="16" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="10.5" font-weight="700" fill="#e2e8f0">• Diffuse Representation</text>
+      <text x="0" y="32" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9.5" fill="#94a3b8">Visual safety requires cumulative control</text>
+      <text x="0" y="44" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9.5" fill="#94a3b8">across up to 50 directions (Li et al. 2026).</text>
+
+      <text x="0" y="66" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="10.5" font-weight="700" fill="#e2e8f0">• Cross-Modal Distortion</text>
+      <text x="0" y="82" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9.5" fill="#94a3b8">Visual embeddings bypass text safety checks</text>
+      <text x="0" y="94" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9.5" fill="#94a3b8">through unaligned projector channels.</text>
+    </g>
+
+    <!-- Arrow -->
+    <path d="M 240 275 L 240 295" stroke="#ff758f" stroke-width="1.5"/>
+
+    <!-- Outcome Box -->
+    <rect x="25" y="295" width="430" height="75" rx="8" fill="#7f1d1d" stroke="#ef4444" stroke-width="1.2"/>
+    <text x="45" y="318" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="11" font-weight="700" fill="#fecaca">Decision Outcome: Jailbreak Vulnerability (High ASR)</text>
+    <text x="45" y="336" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="10" fill="#fee2e2">Safety circuit suppressed; visual OCR / reasoning features force</text>
+    <text x="45" y="352" font-family="monospace" font-size="9.5" fill="#f87171">model to generate compliant harmful synthesis (e.g. 59.7% ASR in Xie et al.).</text>
+
+    <!-- Intervention Defense Note -->
+    <rect x="25" y="385" width="430" height="75" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+    <text x="45" y="406" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="10.5" font-weight="700" fill="#cbd5e1">Proposed Mechanistic Defenses:</text>
+    <text x="45" y="424" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9.5" fill="#94a3b8">• CARE (Fu et al.): Causal mediation + dual-modal subspace projection</text>
+    <text x="45" y="438" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9.5" fill="#94a3b8">• ASTRA (Wang et al.): Adaptive activation steering along harmful directions</text>
+  </g>
+</svg>

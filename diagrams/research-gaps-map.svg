@@ -1,0 +1,129 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 600" width="100%" height="100%">
+  <defs>
+    <linearGradient id="gapsBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080e1e"/>
+      <stop offset="50%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#141c30"/>
+    </linearGradient>
+    <linearGradient id="cardGrad5" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1100" height="600" fill="url(#gapsBg)"/>
+
+  <!-- Title & Subtitle -->
+  <g transform="translate(50, 40)">
+    <text x="0" y="0" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="22" font-weight="800" fill="#ffffff" letter-spacing="-0.3">
+      Evidence-Supported Research Gaps &amp; Future Directions
+    </text>
+    <text x="0" y="24" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="13" font-weight="400" fill="#94a3b8">
+      Five critical challenges identified across the 8 core VLM mechanistic safety studies (2020–2026).
+    </text>
+  </g>
+
+  <!-- 5 Cards Layout (Top row: 3 cards; Bottom row: 2 cards) -->
+
+  <!-- Card 1: Matched Cross-Modal Causal Experiments -->
+  <g transform="translate(50, 90)">
+    <rect x="0" y="0" width="315" height="210" rx="10" fill="url(#cardGrad5)" stroke="#38bdf8" stroke-width="1.2"/>
+    <rect x="0" y="0" width="315" height="32" rx="10" fill="#1e293b"/>
+    <circle cx="20" cy="16" r="8" fill="#0284c7"/>
+    <text x="20" y="20" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="10" font-weight="800" fill="#ffffff" text-anchor="middle">1</text>
+    <text x="36" y="20" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="11" font-weight="700" fill="#38bdf8">CROSS-MODAL CAUSAL CONTROL</text>
+
+    <text x="20" y="55" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="11" font-weight="700" fill="#ffffff">Current Empirical Gap:</text>
+    <text x="20" y="72" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9.5" fill="#cbd5e1">Text refusal maps to compact units (~88</text>
+    <text x="20" y="86" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9.5" fill="#cbd5e1">neurons), while visual safety spreads over 50</text>
+    <text x="20" y="100" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9.5" fill="#cbd5e1">directions. Cross-modal tests lack matched pairs.</text>
+
+    <text x="20" y="125" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="11" font-weight="700" fill="#38bdf8">Future Research Priority:</text>
+    <text x="20" y="142" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9.5" fill="#94a3b8">• Construct identical harmful requests across</text>
+    <text x="20" y="156" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9.5" fill="#94a3b8">  plain text, typographic image, and scene.</text>
+    <text x="20" y="170" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9.5" fill="#94a3b8">• Apply identical ablation &amp; patching protocols.</text>
+    <text x="20" y="184" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9.5" fill="#94a3b8">• Include benign control images to test over-refusal.</text>
+  </g>
+
+  <!-- Card 2: Standardized Reporting & Reproducibility -->
+  <g transform="translate(390, 90)">
+    <rect x="0" y="0" width="315" height="210" rx="10" fill="url(#cardGrad5)" stroke="#a78bfa" stroke-width="1.2"/>
+    <rect x="0" y="0" width="315" height="32" rx="10" fill="#1e293b"/>
+    <circle cx="20" cy="16" r="8" fill="#7c3aed"/>
+    <text x="20" y="20" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="10" font-weight="800" fill="#ffffff" text-anchor="middle">2</text>
+    <text x="36" y="20" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="11" font-weight="700" fill="#a78bfa">STANDARDIZED REPORTING</text>
+
+    <text x="20" y="55" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="11" font-weight="700" fill="#ffffff">Current Empirical Gap:</text>
+    <text x="20" y="72" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9.5" fill="#cbd5e1">Papers report varying metrics (ASR, attack</text>
+    <text x="20" y="86" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9.5" fill="#cbd5e1">drop %, restore rate) on disparate checkpoints</text>
+    <text x="20" y="100" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9.5" fill="#cbd5e1">without disclosing selection thresholds or seeds.</text>
+
+    <text x="20" y="125" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="11" font-weight="700" fill="#a78bfa">Future Research Priority:</text>
+    <text x="20" y="142" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9.5" fill="#94a3b8">• Release exact layer indices, vector weights,</text>
+    <text x="20" y="156" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9.5" fill="#94a3b8">  and steering calibration hyperparameters.</text>
+    <text x="20" y="170" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9.5" fill="#94a3b8">• Document rerouting / circuit compensation.</text>
+    <text x="20" y="184" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9.5" fill="#94a3b8">• Publish shared extraction tables &amp; open code.</text>
+  </g>
+
+  <!-- Card 3: Safety-Utility Evaluation with Independent Judges -->
+  <g transform="translate(730, 90)">
+    <rect x="0" y="0" width="320" height="210" rx="10" fill="url(#cardGrad5)" stroke="#10b981" stroke-width="1.2"/>
+    <rect x="0" y="0" width="320" height="32" rx="10" fill="#1e293b"/>
+    <circle cx="20" cy="16" r="8" fill="#059669"/>
+    <text x="20" y="20" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="10" font-weight="800" fill="#ffffff" text-anchor="middle">3</text>
+    <text x="36" y="20" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="11" font-weight="700" fill="#10b981">SAFETY–UTILITY AUDITING</text>
+
+    <text x="20" y="55" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="11" font-weight="700" fill="#ffffff">Current Empirical Gap:</text>
+    <text x="20" y="72" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9.5" fill="#cbd5e1">Refusal metrics reward aggressive abstention.</text>
+    <text x="20" y="86" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9.5" fill="#cbd5e1">Gupta &amp; Ch. show safety often unnecessarily</text>
+    <text x="20" y="100" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9.5" fill="#cbd5e1">suppresses legitimate visual grounding.</text>
+
+    <text x="20" y="125" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="11" font-weight="700" fill="#10b981">Future Research Priority:</text>
+    <text x="20" y="142" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9.5" fill="#94a3b8">• Decouple harmful compliance from over-refusal.</text>
+    <text x="20" y="156" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9.5" fill="#94a3b8">• Jointly report VQA, grounding, &amp; task accuracy.</text>
+    <text x="20" y="170" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9.5" fill="#94a3b8">• Deploy blinded human judges alongside</text>
+    <text x="20" y="184" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9.5" fill="#94a3b8">  automated LLM-based evaluators.</text>
+  </g>
+
+  <!-- Bottom Row: 2 Wider Cards -->
+
+  <!-- Card 4: Generalization Across Models & Languages -->
+  <g transform="translate(50, 320)">
+    <rect x="0" y="0" width="485" height="230" rx="10" fill="url(#cardGrad5)" stroke="#f59e0b" stroke-width="1.2"/>
+    <rect x="0" y="0" width="485" height="32" rx="10" fill="#1e293b"/>
+    <circle cx="20" cy="16" r="8" fill="#d97706"/>
+    <text x="20" y="20" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="10" font-weight="800" fill="#ffffff" text-anchor="middle">4</text>
+    <text x="36" y="20" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="11" font-weight="700" fill="#f59e0b">CROSS-MODEL &amp; MULTILINGUAL GENERALIZATION</text>
+
+    <text x="20" y="55" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="11" font-weight="700" fill="#ffffff">Current Empirical Gap:</text>
+    <text x="20" y="72" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9.5" fill="#cbd5e1">Safety neurons and steering directions identified in one model family (e.g. LLaVA)</text>
+    <text x="20" y="86" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9.5" fill="#cbd5e1">do not automatically transfer to others (InternVL, Qwen-VL). Multilingual safety</text>
+    <text x="20" y="100" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9.5" fill="#cbd5e1">investigations remain largely restricted to high-resource languages (Shi et al. 2026).</text>
+
+    <text x="20" y="130" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="11" font-weight="700" fill="#f59e0b">Future Research Priority:</text>
+    <text x="20" y="148" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9.5" fill="#94a3b8">• Test whether identified safety subspaces hold across different visual encoders</text>
+    <text x="20" y="162" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9.5" fill="#94a3b8">  (e.g., CLIP ViT vs. SigLIP vs. DINOv2) and connector architectures.</text>
+    <text x="20" y="176" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9.5" fill="#94a3b8">• Evaluate cross-lingual safety neuron preservation in low-resource language prompts.</text>
+    <text x="20" y="190" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9.5" fill="#94a3b8">• Validate black-box transferability using both open and closed-source systems.</text>
+  </g>
+
+  <!-- Card 5: Adaptive Attack Robustness & Mechanism Verification -->
+  <g transform="translate(565, 320)">
+    <rect x="0" y="0" width="485" height="230" rx="10" fill="url(#cardGrad5)" stroke="#ff758f" stroke-width="1.2"/>
+    <rect x="0" y="0" width="485" height="32" rx="10" fill="#1e293b"/>
+    <circle cx="20" cy="16" r="8" fill="#e11d48"/>
+    <text x="20" y="20" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="10" font-weight="800" fill="#ffffff" text-anchor="middle">5</text>
+    <text x="36" y="20" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="11" font-weight="700" fill="#ff758f">ADAPTIVE ATTACK RESISTANCE &amp; CAUSAL RIGOR</text>
+
+    <text x="20" y="55" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="11" font-weight="700" fill="#ffffff">Current Empirical Gap:</text>
+    <text x="20" y="72" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9.5" fill="#cbd5e1">Most defenses (IAR, ASTRA, CARE) are evaluated against static jailbreak prompts.</text>
+    <text x="20" y="86" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9.5" fill="#cbd5e1">Xie et al. (SCIA) prove adversaries can actively exploit circuit knowledge to</text>
+    <text x="20" y="100" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9.5" fill="#cbd5e1">engineer 59.7% ASR transferable attacks bypass defenses.</text>
+
+    <text x="20" y="130" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="11" font-weight="700" fill="#ff758f">Future Research Priority:</text>
+    <text x="20" y="148" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9.5" fill="#94a3b8">• Subject inference-time steering and projection to white-box adaptive adversaries</text>
+    <text x="20" y="162" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9.5" fill="#94a3b8">  who have explicit knowledge of the intervention vectors.</text>
+    <text x="20" y="176" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9.5" fill="#94a3b8">• Test whether model activations route around intervened neurons via redundant paths.</text>
+    <text x="20" y="190" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9.5" fill="#94a3b8">• Differentiate surface-level defensive heuristic from foundational causal mechanisms.</text>
+  </g>
+</svg>

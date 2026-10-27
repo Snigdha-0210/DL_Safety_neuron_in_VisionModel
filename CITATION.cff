@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: "If you utilize this systematic review, dataset extraction ledger, or conceptual diagrams in your academic research, please cite it as below."
+authors:
+  - family-names: "Gorai"
+    given-names: "Snigdha"
+    affiliation: "VIT-AP University"
+    orcid: ""
+title: "Mechanistic Interpretability of Safety Neurons in Vision-Language Models: A Structured Literature Review of Probing, Activation Patching, and Localized Safety Representations"
+type: report
+version: 1.0.0
+date-released: 2026-10-28
+url: "https://github.com/Snigdha-0210/DL_Safety_neuron_in_VisionModel"
+repository-code: "https://github.com/Snigdha-0210/DL_Safety_neuron_in_VisionModel"
+keywords:
+  - "vision-language models"
+  - "mechanistic interpretability"
+  - "safety neurons"
+  - "activation patching"
+  - "activation steering"
+  - "probing"
+  - "PRISMA 2020"
+  - "deep learning"
+institution:
+  name: "School of Computer Science and Engineering, VIT-AP University"
+  address: "Beside AP Secretariat, Near Vijayawada, Amaravati, Andhra Pradesh 522237, India"
+notes: "Digital Assessment 2 & 3 submission for course CSE4006 - Deep Learning (Academic Year 2026-2027)."
+license: "CC-BY-4.0"

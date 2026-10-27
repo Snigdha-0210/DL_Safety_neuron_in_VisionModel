@@ -1,0 +1,47 @@
+# ==============================================================================
+# .gitignore for DL_Safety_neuron_in_VisionModel
+# ==============================================================================
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+[Dd]esktop.ini
+$RECYCLE.BIN/
+
+# Office temporary lock files
+~$*.docx
+~$*.xlsx
+~$*.pptx
+
+# Python caches and bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+.pytest_cache/
+
+# IDE and Editor files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+
+# Build and distribution artifacts
+build/
+dist/
+*.egg-info/
+
+# IMPORTANT: Third-party copyrighted full-text research PDFs
+# Per repository policy and publisher copyright compliance, third-party 
+# research PDFs must not be committed to this public repository.
+# Keep the full PDF archive locally for university course evaluation.
+research_papers/
+*.pdf
+!report/final-review.pdf
