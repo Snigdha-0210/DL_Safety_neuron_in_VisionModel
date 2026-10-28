@@ -15,10 +15,13 @@ This directory contains the authoritative academic literature review report subm
 
 ## Available Formats
 
-1. **[`final-review.docx`](final-review.docx)**  
-   The primary submission document in Microsoft Word format, containing the full text, formatted PRISMA extraction tables, qualitative appraisal matrices, and reference lists.
+1. **[`final-review.pdf`](final-review.pdf)**  
+   The primary submission document in Adobe PDF format (557 KB), containing the complete formatted report, mathematical formulations, PRISMA extraction tables, qualitative appraisal matrices, and reference lists.
 
-2. **[`final-review.md`](final-review.md)**  
+2. **[`final-review.docx`](final-review.docx)**  
+   The editable submission document in Microsoft Word format, containing the full text, formatted PRISMA extraction tables, qualitative appraisal matrices, and reference lists.
+
+3. **[`final-review.md`](final-review.md)**  
    A complete GitHub Flavored Markdown rendition of the review report, fully formatted with headings, tables, callout blocks, and hyperlinked references for direct browser reading on GitHub.
 
 ---

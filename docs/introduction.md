@@ -57,3 +57,4 @@ This systematic literature review provides a structured, evidence-audited synthe
 3. **Modality Disparity Mapping:** Analyzes why localized safety representations in text do not trivially translate to visual safety, synthesizing findings from Li et al. (2026), Fu et al. (2026), and Gupta & Chakraborty (2026).
 4. **Safety–Utility Balance:** Documents the critical tension between mitigating harmful compliance and preventing catastrophic over-refusal / loss of legitimate visual grounding.
 5. **Actionable Research Roadmap:** Outlines five evidence-backed research gaps to guide future empirical investigations into trustworthy multimodal foundation models.
+

@@ -87,3 +87,4 @@ From the **38 unique research records**:
   - **8 Included in Core Synthesis:** Empirical studies of VLM internal safety mechanisms (Li et al. 2026; Xie et al. 2026; Fu et al. 2026; Gupta & Chakraborty 2026; Li et al. 2025; Shi et al. 2026; Wang et al. 2025; D'Incà et al. 2026).
   - **2 Background / Context Studies:** Language-only mechanistic interpretability papers used to contextualize neuron localization and SAE features (Chen et al. 2025; Weng et al. 2026).
   - **6 Excluded After Full-Text Evaluation:** Specific exclusion reasons documented in `data/archive-screening-record.csv`.
+

@@ -38,6 +38,13 @@ build/
 dist/
 *.egg-info/
 
+# Archives and binary bundles
+*.zip
+*.tar
+*.tar.gz
+*.7z
+*.rar
+
 # IMPORTANT: Third-party copyrighted full-text research PDFs
 # Per repository policy and publisher copyright compliance, third-party 
 # research PDFs must not be committed to this public repository.

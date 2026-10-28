@@ -91,3 +91,4 @@ Contemporary defensive interventions (CARE, IAR, ASTRA, UWM) have primarily been
 1. **White-Box Adaptive Threat Modeling:** Subject inference-time steering and projection mechanisms to white-box adversaries who possess full knowledge of the steering vectors and projector weights.
 2. **Dynamic Defense Ensembling:** Explore stochastic or input-adaptive steering vectors that dynamically adjust based on internal attention entropy, preventing adversaries from optimizing static bypass perturbations.
 3. **Formal Verification of Safety Subspaces:** Develop mathematical bounds on the Lipschitz continuity of safety subspace projections to guarantee that bounded input perturbations cannot escape the safe representation manifold.
+

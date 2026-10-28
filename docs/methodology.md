@@ -114,3 +114,4 @@ Because the reviewed studies employ heterogeneous neural architectures, interven
 ```
 
 The completed qualitative appraisal matrix for all included studies is documented in [`docs/paper-comparison.md`](paper-comparison.md).
+

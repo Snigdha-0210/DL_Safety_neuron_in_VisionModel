@@ -83,3 +83,4 @@ Safety mechanisms developed and tested exclusively in English often fail to gene
 - **Shi et al. (2026) — Targeted Safety Neuron Enhancement (Precise Shield):** Shi et al. investigate the coupling of multilingual instructions with visual inputs. They show that safety neurons identified in English prompts exhibit partial activation overlap with other high-resource languages (e.g., Chinese, Spanish), but fail to activate reliably on low-resource language queries.
 - **Neuron-Targeted Tuning:** By isolating safety-critical neurons across multilingual representations and applying targeted parameter enhancement, the authors improve multilingual safety alignment without degrading general reasoning capabilities.
 - **Takeaway:** Multimodal safety is inextricably linked to multilingual semantics; evaluating safety exclusively on English benchmarks creates a false sense of security.
+

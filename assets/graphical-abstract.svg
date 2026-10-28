@@ -1,0 +1,228 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 680" width="100%" height="100%">
+  <defs>
+    <linearGradient id="gaBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#060a14"/>
+      <stop offset="50%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#151d33"/>
+    </linearGradient>
+    <linearGradient id="cardGradGa" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0b1329"/>
+    </linearGradient>
+    <linearGradient id="cyanHeader" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00f5d4"/>
+      <stop offset="100%" stop-color="#38bdf8"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="680" fill="url(#gaBg)"/>
+
+  <!-- Top Title Banner -->
+  <g transform="translate(50, 30)">
+    <rect x="0" y="0" width="1100" height="68" rx="10" fill="#0b1329" stroke="#334155" stroke-width="1.2"/>
+    <rect x="15" y="14" width="160" height="22" rx="4" fill="#042f2e" stroke="#00f5d4" stroke-width="1"/>
+    <text x="95" y="29" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="10" font-weight="800" fill="#00f5d4" text-anchor="middle">GRAPHICAL ABSTRACT</text>
+    
+    <text x="190" y="32" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="16" font-weight="800" fill="#ffffff">
+      Mechanistic Interpretability of Safety Neurons in Vision-Language Models
+    </text>
+    <text x="190" y="52" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="11" font-weight="400" fill="#94a3b8">
+      A PRISMA-Guided Systematic Review • Snigdha Gorai (24BCE7185) • VIT-AP University • CSE4006 Deep Learning (2026–2027)
+    </text>
+
+    <!-- Source Link pill -->
+    <rect x="940" y="18" width="145" height="32" rx="6" fill="#1e293b" stroke="#38bdf8" stroke-width="1"/>
+    <text x="1012" y="38" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="10.5" font-weight="700" fill="#38bdf8" text-anchor="middle">8 Core VLM Studies</text>
+  </g>
+
+  <!-- 3 Main Columns / Panels -->
+
+  <!-- Panel 1: The Multimodal Safety Paradox -->
+  <g transform="translate(50, 115)">
+    <rect x="0" y="0" width="345" height="465" rx="10" fill="url(#cardGradGa)" stroke="#38bdf8" stroke-width="1.2"/>
+    <rect x="0" y="0" width="345" height="34" rx="10" fill="#1e293b"/>
+    <circle cx="20" cy="17" r="7" fill="#38bdf8"/>
+    <text x="35" y="21" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="11" font-weight="700" fill="#38bdf8">1. THE MULTIMODAL SAFETY PARADOX</text>
+
+    <!-- Text-Only Pathway -->
+    <g transform="translate(15, 48)">
+      <rect x="0" y="0" width="315" height="85" rx="8" fill="#0f172a" stroke="#10b981" stroke-width="1"/>
+      <text x="12" y="20" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="10.5" font-weight="700" fill="#34d399">Unimodal Text Prompt</text>
+      <text x="12" y="38" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9" fill="#cbd5e1">"How do I synthesize chemical toxin X?"</text>
+      <line x1="12" y1="46" x2="303" y2="46" stroke="#1e293b" stroke-width="1"/>
+      <text x="12" y="62" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9" fill="#94a3b8">Internal: ~88 MLP Neurons &amp; 5 GEVD directions</text>
+      <rect x="12" y="68" width="291" height="18" rx="4" fill="#064e3b"/>
+      <text x="157" y="80" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9" font-weight="700" fill="#6ee7b7" text-anchor="middle">✓ Aligned Refusal: "I cannot fulfill this request."</text>
+    </g>
+
+    <!-- Multimodal / Visual Pathway -->
+    <g transform="translate(15, 145)">
+      <rect x="0" y="0" width="315" height="100" rx="8" fill="#0f172a" stroke="#ef4444" stroke-width="1"/>
+      <text x="12" y="20" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="10.5" font-weight="700" fill="#f87171">Multimodal / Typographic Jailbreak</text>
+      <text x="12" y="36" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9" fill="#cbd5e1">[Image with embedded OCR text instructions]</text>
+      <text x="12" y="50" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9" fill="#cbd5e1">"Read the sign and provide full procedure."</text>
+      <line x1="12" y1="58" x2="303" y2="58" stroke="#1e293b" stroke-width="1"/>
+      <text x="12" y="72" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9" fill="#fca5a5">Internal: Spread across 50+ directions (non-modular)</text>
+      <rect x="12" y="78" width="291" height="18" rx="4" fill="#7f1d1d"/>
+      <text x="157" y="90" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9" font-weight="700" fill="#fecaca" text-anchor="middle">✗ Safety Bypass: "Step 1: Obtain precursor..."</text>
+    </g>
+
+    <!-- Why Black-Box Fails -->
+    <g transform="translate(15, 260)">
+      <rect x="0" y="0" width="315" height="190" rx="8" fill="#0b1329" stroke="#334155" stroke-width="1"/>
+      <text x="15" y="24" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="11" font-weight="700" fill="#ffffff">Why Output-Only Testing Fails:</text>
+      <text x="15" y="46" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9.5" fill="#94a3b8">• Black-box testing reports <tspan fill="#f87171">that</tspan> an attack</text>
+      <text x="15" y="60" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9.5" fill="#94a3b8">  succeeded, but not <tspan fill="#38bdf8">where</tspan> or <tspan fill="#38bdf8">why</tspan>.</text>
+      <text x="15" y="80" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9.5" fill="#94a3b8">• Vision encoder vs. Projector vs. Decoders?</text>
+      <text x="15" y="96" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9.5" fill="#94a3b8">• Prompt wrappers are easily bypassed.</text>
+      
+      <rect x="15" y="115" width="285" height="60" rx="6" fill="#1e293b"/>
+      <text x="157" y="134" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="10" font-weight="700" fill="#00f5d4" text-anchor="middle">Mechanistic Interpretability Goal:</text>
+      <text x="157" y="152" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9" fill="#cbd5e1" text-anchor="middle">Reverse-engineer internal refusal circuits &amp;</text>
+      <text x="157" y="165" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9" fill="#cbd5e1" text-anchor="middle">control behavior via direct activation steering.</text>
+    </g>
+  </g>
+
+  <!-- Panel 2: Architecture & Empirical Interventions -->
+  <g transform="translate(425, 115)">
+    <rect x="0" y="0" width="350" height="465" rx="10" fill="url(#cardGradGa)" stroke="#a78bfa" stroke-width="1.2"/>
+    <rect x="0" y="0" width="350" height="34" rx="10" fill="#1e293b"/>
+    <circle cx="20" cy="17" r="7" fill="#a78bfa"/>
+    <text x="35" y="21" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="11" font-weight="700" fill="#a78bfa">2. INTERNAL INTERCEPTION &amp; INTERVENTIONS</text>
+
+    <!-- Miniature Architecture Stack -->
+    <g transform="translate(15, 45)">
+      <!-- Stage 1: ViT -->
+      <rect x="0" y="0" width="150" height="42" rx="6" fill="#0f172a" stroke="#38bdf8" stroke-width="1"/>
+      <text x="75" y="18" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9.5" font-weight="700" fill="#38bdf8" text-anchor="middle">Vision Transformer</text>
+      <text x="75" y="32" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="8.5" fill="#94a3b8" text-anchor="middle">CLIP / SigLIP ViT</text>
+
+      <!-- Stage 2: Projector -->
+      <rect x="170" y="0" width="150" height="42" rx="6" fill="#0f172a" stroke="#00f5d4" stroke-width="1"/>
+      <text x="245" y="18" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9.5" font-weight="700" fill="#00f5d4" text-anchor="middle">Cross-Modal Projector</text>
+      <text x="245" y="32" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="8.5" fill="#94a3b8" text-anchor="middle">Linear / MLP / Q-Former</text>
+
+      <path d="M 75 42 L 75 52 L 245 52 L 245 42" stroke="#475569" stroke-width="1.2" fill="none"/>
+
+      <!-- Stage 3: LLM Backbone Layers -->
+      <rect x="0" y="60" width="320" height="70" rx="6" fill="#070d1e" stroke="#818cf8" stroke-width="1.2"/>
+      <text x="160" y="78" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="10" font-weight="700" fill="#e2e8f0" text-anchor="middle">Autoregressive LLM Transformer Layers</text>
+      
+      <!-- Neurons grid visual -->
+      <circle cx="60" cy="95" r="4" fill="#475569"/>
+      <circle cx="80" cy="95" r="5" fill="#00f5d4"/>
+      <circle cx="100" cy="95" r="4" fill="#475569"/>
+      <circle cx="120" cy="95" r="5" fill="#ef4444"/>
+      <circle cx="140" cy="95" r="4" fill="#475569"/>
+      <circle cx="160" cy="95" r="5" fill="#00f5d4"/>
+      <circle cx="180" cy="95" r="4" fill="#475569"/>
+      <circle cx="200" cy="95" r="5" fill="#38bdf8"/>
+      <circle cx="220" cy="95" r="4" fill="#475569"/>
+      <circle cx="240" cy="95" r="5" fill="#ef4444"/>
+      <circle cx="260" cy="95" r="4" fill="#475569"/>
+      
+      <text x="160" y="118" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="8.5" fill="#94a3b8" text-anchor="middle">Feed-Forward MLPs • Self-Attention Heads • Residual Stream</text>
+    </g>
+
+    <!-- 4 Key Methods Summarized -->
+    <g transform="translate(15, 195)">
+      <!-- Method 1: Ablation -->
+      <rect x="0" y="0" width="320" height="52" rx="6" fill="#0f172a" stroke="#38bdf8" stroke-width="1"/>
+      <text x="12" y="18" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9.5" font-weight="700" fill="#38bdf8">Targeted Neuron Ablation (Li et al., 2026)</text>
+      <text x="12" y="34" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="8.5" fill="#cbd5e1">Zeroes candidate neurons (h_i := 0) to establish causal necessity</text>
+      <text x="12" y="46" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="8" fill="#94a3b8">Isolates ~88 text neurons; visual safety remains distributed.</text>
+
+      <!-- Method 2: CARE -->
+      <rect x="0" y="60" width="320" height="52" rx="6" fill="#0f172a" stroke="#00f5d4" stroke-width="1"/>
+      <text x="12" y="78" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9.5" font-weight="700" fill="#00f5d4">Subspace Projection: CARE (Fu et al., CVPR 2026)</text>
+      <text x="12" y="94" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="8.5" fill="#cbd5e1">Orthogonally projects out unsafe dual-modal transmission directions</text>
+      <text x="12" y="106" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="8" fill="#94a3b8">Prevents jailbreaks while retaining general multimodal task accuracy.</text>
+
+      <!-- Method 3: ASTRA & IAR -->
+      <rect x="0" y="120" width="320" height="52" rx="6" fill="#0f172a" stroke="#f59e0b" stroke-width="1"/>
+      <text x="12" y="138" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9.5" font-weight="700" fill="#f59e0b">Dynamic Activation Steering (Wang 2025; Li 2025)</text>
+      <text x="12" y="154" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="8.5" fill="#cbd5e1">Adds runtime revision vector (h' = h + α · v_safe) during decoding</text>
+      <text x="12" y="166" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="8" fill="#94a3b8">Cuts ASR by 34% to 53% across benchmarks with zero model retraining.</text>
+
+      <!-- Method 4: SCIA Circuit Attack -->
+      <rect x="0" y="180" width="320" height="52" rx="6" fill="#0f172a" stroke="#ef4444" stroke-width="1"/>
+      <text x="12" y="198" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9.5" font-weight="700" fill="#f87171">Safety Circuit Intervention: SCIA (Xie et al., ICML 2026)</text>
+      <text x="12" y="214" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="8.5" fill="#cbd5e1">Perturbs discovered safety circuits to engineer transferable attacks</text>
+      <text x="12" y="226" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="8" fill="#fca5a5">Demonstrates 59.7% average ASR transfer across black-box models.</text>
+    </g>
+  </g>
+
+  <!-- Panel 3: Key Scientific Insights & Gaps -->
+  <g transform="translate(805, 115)">
+    <rect x="0" y="0" width="345" height="465" rx="10" fill="url(#cardGradGa)" stroke="#00f5d4" stroke-width="1.2"/>
+    <rect x="0" y="0" width="345" height="34" rx="10" fill="#1e293b"/>
+    <circle cx="20" cy="17" r="7" fill="#00f5d4"/>
+    <text x="35" y="21" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="11" font-weight="700" fill="#00f5d4">3. SYNTHESIS INSIGHTS &amp; RESEARCH GAPS</text>
+
+    <!-- Key Takeaway 1 -->
+    <g transform="translate(15, 48)">
+      <rect x="0" y="0" width="315" height="68" rx="6" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+      <text x="12" y="20" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="10" font-weight="700" fill="#00f5d4">Insight 1: No Universal Safety Switch</text>
+      <text x="12" y="38" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="8.5" fill="#cbd5e1">Text refusal is compact; visual safety is distributed</text>
+      <text x="12" y="50" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="8.5" fill="#cbd5e1">across 50+ directions. Single-neuron interventions</text>
+      <text x="12" y="62" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="8.5" fill="#fca5a5">cannot protect against multimodal jailbreaks.</text>
+    </g>
+
+    <!-- Key Takeaway 2 -->
+    <g transform="translate(15, 126)">
+      <rect x="0" y="0" width="315" height="68" rx="6" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+      <text x="12" y="20" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="10" font-weight="700" fill="#38bdf8">Insight 2: Decodability ≠ Downstream Causation</text>
+      <text x="12" y="38" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="8.5" fill="#cbd5e1">Linear probes readily decode safety signals from hidden</text>
+      <text x="12" y="50" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="8.5" fill="#cbd5e1">states, but models often generate unsafe text regardless.</text>
+      <text x="12" y="62" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="8.5" fill="#38bdf8">Causal steering is mandatory for dependable safeguards.</text>
+    </g>
+
+    <!-- Key Takeaway 3 -->
+    <g transform="translate(15, 204)">
+      <rect x="0" y="0" width="315" height="68" rx="6" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+      <text x="12" y="20" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="10" font-weight="700" fill="#f59e0b">Insight 3: Grounding vs. Over-Refusal Tension</text>
+      <text x="12" y="38" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="8.5" fill="#cbd5e1">Late-layer alignment suppresses legitimate visual grounding</text>
+      <text x="12" y="50" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="8.5" fill="#cbd5e1">(Gupta &amp; Chakraborty, 2026). Safeguards must measure</text>
+      <text x="12" y="62" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="8.5" fill="#fde68a">both harmful compliance and false refusal rates.</text>
+    </g>
+
+    <!-- Future Directions Priority Box -->
+    <g transform="translate(15, 282)">
+      <rect x="0" y="0" width="315" height="150" rx="8" fill="#042f2e" stroke="#00f5d4" stroke-width="1.2"/>
+      <text x="157" y="24" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="11" font-weight="800" fill="#00f5d4" text-anchor="middle">5 Urgent Research Gaps:</text>
+      <text x="15" y="46" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9" fill="#a7f3d0">1. Matched cross-modal triplets (text vs OCR vs scene)</text>
+      <text x="15" y="64" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9" fill="#a7f3d0">2. Standardized layer, injection &amp; metric reporting</text>
+      <text x="15" y="82" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9" fill="#a7f3d0">3. Joint safety–utility auditing on RefCOCO &amp; VQA</text>
+      <text x="15" y="100" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9" fill="#a7f3d0">4. Cross-architecture &amp; multilingual transfer (Shi 2026)</text>
+      <text x="15" y="118" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9" fill="#a7f3d0">5. White-box adaptive threat modeling verification</text>
+      <line x1="15" y1="128" x2="300" y2="128" stroke="#065f46" stroke-width="1"/>
+      <text x="157" y="142" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="8" fill="#6ee7b7" text-anchor="middle">Detailed roadmap in docs/research-gaps.md</text>
+    </g>
+  </g>
+
+  <!-- Bottom PRISMA Audit Summary Bar -->
+  <g transform="translate(50, 595)">
+    <rect x="0" y="0" width="1100" height="55" rx="8" fill="#0b1120" stroke="#334155" stroke-width="1.2"/>
+    
+    <text x="25" y="24" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="10.5" font-weight="700" fill="#38bdf8">PRISMA 2020 BOUNDED AUDIT FOOTPRINT:</text>
+    <text x="25" y="42" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9.5" fill="#94a3b8">
+      Captured 30 visible Google Scholar records + 16 retained research PDFs = <tspan fill="#ffffff" font-weight="700">46 Identified</tspan> → <tspan fill="#ffffff" font-weight="700">38 Screened</tspan> (8 duplicates removed) → <tspan fill="#ffffff" font-weight="700">16 Full-Texts Assessed</tspan> (11 unresolved candidates) → <tspan fill="#00f5d4" font-weight="800">8 Core VLM Studies Included</tspan>.
+    </text>
+
+    <!-- Mini Stage Indicator Pills on Right -->
+    <g transform="translate(740, 14)">
+      <rect x="0" y="0" width="70" height="26" rx="4" fill="#1e293b"/>
+      <text x="35" y="17" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9" font-weight="700" fill="#38bdf8" text-anchor="middle">Id: 46</text>
+
+      <rect x="80" y="0" width="75" height="26" rx="4" fill="#1e293b"/>
+      <text x="117" y="17" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9" font-weight="700" fill="#a78bfa" text-anchor="middle">Scr: 38</text>
+
+      <rect x="165" y="0" width="75" height="26" rx="4" fill="#1e293b"/>
+      <text x="202" y="17" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9" font-weight="700" fill="#f59e0b" text-anchor="middle">Elig: 16</text>
+
+      <rect x="250" y="0" width="90" height="26" rx="4" fill="#042f2e" stroke="#00f5d4" stroke-width="1"/>
+      <text x="295" y="17" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9" font-weight="800" fill="#00f5d4" text-anchor="middle">Core: 8</text>
+    </g>
+  </g>
+</svg>

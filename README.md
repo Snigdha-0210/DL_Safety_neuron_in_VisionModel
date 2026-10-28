@@ -1,15 +1,15 @@
 <div align="center">
 
-<img src="assets/banner.svg" alt="Mechanistic Interpretability of Safety Neurons in Vision-Language Models" width="100%">
+<img src="assets/research-banner.svg" alt="Mechanistic Interpretability of Safety Neurons in Vision-Language Models" width="100%">
 
 <br/>
 
-[![Literature Review](https://img.shields.io/badge/Study%20Type-Literature%20Review-00f5d4?style=for-the-badge&logo=googlescholar&logoColor=070c18)](report/final-review.docx)
-[![PRISMA 2020](https://img.shields.io/badge/Methodology-PRISMA%202020%20Informed-38bdf8?style=for-the-badge&logo=diagramsdotnet&logoColor=ffffff)](data/search-strategy.md)
+[![Vision-Language Models](https://img.shields.io/badge/Architecture-Vision--Language%20Models-38bdf8?style=for-the-badge&logo=huggingface&logoColor=ffffff)](docs/introduction.md)
 [![Deep Learning](https://img.shields.io/badge/Course-CSE4006%20Deep%20Learning-a78bfa?style=for-the-badge&logo=pytorch&logoColor=ffffff)](https://vitap.ac.in)
-[![Vision-Language Models](https://img.shields.io/badge/Focus-Vision--Language%20Models-f59e0b?style=for-the-badge&logo=huggingface&logoColor=ffffff)](docs/introduction.md)
 [![Mechanistic Interpretability](https://img.shields.io/badge/Method-Mechanistic%20Interpretability-10b981?style=for-the-badge&logo=circuitverse&logoColor=ffffff)](docs/key-findings.md)
-[![Academic Year](https://img.shields.io/badge/Academic%20Year-2026--2027-64748b?style=for-the-badge)](CITATION.cff)
+[![AI Safety](https://img.shields.io/badge/Domain-AI%20Safety%20%26%20Alignment-ef4444?style=for-the-badge&logo=shield&logoColor=ffffff)](docs/research-questions.md)
+[![PRISMA-Guided Review](https://img.shields.io/badge/Methodology-PRISMA%202020%20Guided-00f5d4?style=for-the-badge&logo=googlescholar&logoColor=070c18)](data/search-strategy.md)
+[![Academic Research](https://img.shields.io/badge/Academic%20Year-2026--2027-64748b?style=for-the-badge)](CITATION.cff)
 
 <br/>
 
@@ -21,7 +21,7 @@
 **Institution:** School of Computer Science and Engineering, [VIT-AP University](https://vitap.ac.in)  
 **Supervisor / Course Evaluation:** Academic Year 2026–2027 &bull; **Audit Reference Date:** 28 October 2026
 
-[📖 Full Report (DOCX)](report/final-review.docx) &bull; [📄 Full Report (Markdown)](report/final-review.md) &bull; [🌐 GitHub Pages Portal](https://snigdha-0210.github.io/DL_Safety_neuron_in_VisionModel/) &bull; [📊 Study Comparison Matrix](data/study-comparison.csv) &bull; [📑 BibTeX](references/bibliography.bib)
+[📖 Full Report (PDF)](report/final-review.pdf) &bull; [📝 Full Report (DOCX)](report/final-review.docx) &bull; [📄 Full Report (Markdown)](report/final-review.md) &bull; [🌐 GitHub Pages Portal](https://snigdha-0210.github.io/DL_Safety_neuron_in_VisionModel/) &bull; [📊 Study Comparison Matrix](data/study-comparison.csv) &bull; [📑 BibTeX](references/bibliography.bib)
 
 </div>
 
@@ -36,23 +36,30 @@
 ## 📑 Table of Contents
 
 - [1. Research Overview](#1-research-overview)
-- [2. Research Objectives](#2-research-objectives)
-- [3. Research Questions](#3-research-questions)
-- [4. Vision-Language Model Architecture & Interception Points](#4-vision-language-model-architecture--interception-points)
-- [5. Mechanistic Interpretability Workflow & Causal Hierarchy](#5-mechanistic-interpretability-workflow--causal-hierarchy)
-- [6. PRISMA 2020 Screening Methodology](#6-prisma-2020-screening-methodology)
-- [7. Research Paper Comparison Matrix](#7-research-paper-comparison-matrix)
-- [8. Key Thematic Findings](#8-key-thematic-findings)
-- [9. Evidence-Supported Research Gaps & Roadmap](#9-evidence-supported-research-gaps--roadmap)
-- [10. Reproducibility, Evidence Ledger & Limitations](#10-reproducibility-evidence-ledger--limitations)
-- [11. Repository Navigation Matrix](#11-repository-navigation-matrix)
-- [12. Citation & Acknowledgements](#12-citation--acknowledgements)
+- [2. Research Motivation](#2-research-motivation)
+- [3. Research Objectives](#3-research-objectives)
+- [4. Research Questions](#4-research-questions)
+- [5. Vision-Language Model Architecture & Interception Points](#5-vision-language-model-architecture--interception-points)
+- [6. Mechanistic Interpretability Methods & Causal Hierarchy](#6-mechanistic-interpretability-methods--causal-hierarchy)
+- [7. PRISMA 2020 Screening Methodology](#7-prisma-2020-screening-methodology)
+- [8. Literature Comparison Matrix](#8-literature-comparison-matrix)
+- [9. Key Thematic Findings](#9-key-thematic-findings)
+- [10. Evidence-Supported Research Gaps](#10-evidence-supported-research-gaps)
+- [11. Future Research Directions](#11-future-research-directions)
+- [12. Reproducibility & Methodological Limitations](#12-reproducibility--methodological-limitations)
+- [13. Repository Navigation Matrix](#13-repository-navigation-matrix)
+- [14. Citation & Acknowledgements](#14-citation--acknowledgements)
 
 ---
 
 ## 1. Research Overview
 
 Vision-Language Models (VLMs) and Multimodal Large Language Models (MLLMs)—such as LLaVA, InternVL, and Qwen-VL—combine high-capacity Vision Transformers (ViT) with autoregressive language model decoders. While state-of-the-art language models have undergone extensive alignment to refuse hazardous queries, that alignment routinely collapses when hazardous concepts are introduced through visual channels (e.g., typographic text embedded in an image, adversarial visual noise, or multi-image jailbreak framings).
+
+<div align="center">
+  <img src="assets/graphical-abstract.svg" alt="Graphical Abstract: Mechanistic Interpretability of Safety Neurons in Vision-Language Models" width="100%">
+  <p><em>Figure 1: Graphical abstract summarizing the multimodal safety paradox, internal VLM interception points, causal intervention hierarchy, and PRISMA audit footprint.</em></p>
+</div>
 
 ```
   TEXT PROMPT ONLY                                    MULTIMODAL / IMAGE-TEXT PROMPT
@@ -65,19 +72,30 @@ Vision-Language Models (VLMs) and Multimodal Large Language Models (MLLMs)—suc
                                                       └────────────────────────────────────────┘
 ```
 
-### Why Inspect Internal Representations?
-Evaluating a model solely through black-box output testing reveals **that** a failure occurred, but fails to explain **how** or **where** the failure unfolded:
+### What Mechanistic Interpretability Investigates
+- **What VLMs Are:** Foundation architectures pairing visual feature extractors (CLIP, SigLIP) with autoregressive decoders via projection layers.
+- **Why Multimodal Safety Matters:** Visual inputs create uncontrolled cross-modal channels that bypass text alignment triggers.
+- **Internal Safety Representations:** High-dimensional hidden activations, MLP neuron weights, attention patterns, and residual streams that encode refusal concepts.
+- **Why Internal Understanding Is Critical:** Black-box output filtering cannot explain why failures occur or prevent adaptive jailbreaks without degrading legitimate visual reasoning.
+
+---
+
+## 2. Research Motivation
+
+### Why Output-Only Safety Evaluation Is Insufficient
+Evaluating a model solely through behavioral black-box testing reveals **that** a failure occurred, but fails to explain **how** or **where** the failure unfolded:
 - Did the visual encoder fail to extract the hazardous concept?
 - Did the cross-modal projection layer route the visual embedding past the language backbone's safety detection heads?
 - Did the language model's early layers activate refusal representations, only to have them overridden by visual grounding attention heads in the late decoding layers?
+- Can internal interventions prevent jailbreaks at runtime without updating billions of model parameters?
 
 **Mechanistic interpretability** addresses this fundamental opacity by inspecting internal activations, isolating candidate "safety neurons" in MLP blocks, analyzing cross-attention heads, and evaluating counterfactual interventions (ablation, dynamic activation steering, and subspace projection). This review synthesizes eight core empirical studies to establish what internal representations reveal about multimodal safety, why visual safety representations diverge sharply from text safety, and how intervention methods differ in their degree of causal proof.
 
 ---
 
-## 2. Research Objectives
+## 3. Research Objectives
 
-The review was designed around four explicit academic objectives:
+The review was designed around four explicit academic objectives extracted directly from the course report:
 
 1. **Internal Unit Identification:** Catalog and classify the internal structural units investigated in the literature, including individual MLP neurons, attention heads, residual stream channels, cross-modal circuits, and low-rank safety subspaces.
 2. **Causal Evidence Appraisal:** Rigorously evaluate the epistemological boundary between correlational probing (decodability) and counterfactual causal interventions (neuron ablation, activation patching, activation steering, and subspace projection).
@@ -86,7 +104,7 @@ The review was designed around four explicit academic objectives:
 
 ---
 
-## 3. Research Questions
+## 4. Research Questions
 
 The four research questions (RQs) answered by this review are:
 
@@ -114,13 +132,13 @@ The four research questions (RQs) answered by this review are:
 
 ---
 
-## 4. Vision-Language Model Architecture & Interception Points
+## 5. Vision-Language Model Architecture & Interception Points
 
 Modern vision-language models share a high-level conceptual pipeline connecting visual perception to autoregressive text generation. Mechanistic interpretability research intervenes at five distinct structural checkpoints along this pipeline:
 
 <div align="center">
   <img src="diagrams/vlm-architecture.svg" alt="Vision-Language Model Architecture and Safety Interception Points" width="95%">
-  <p><em>Figure 1: Representative VLM architecture and five empirical safety analysis interception points.</em></p>
+  <p><em>Figure 2: Representative conceptual VLM architecture and five empirical safety analysis interception points.</em></p>
 </div>
 
 ### Five Empirical Interception Points:
@@ -135,20 +153,29 @@ Modern vision-language models share a high-level conceptual pipeline connecting 
 
 ---
 
-## 5. Mechanistic Interpretability Workflow & Causal Hierarchy
+## 6. Mechanistic Interpretability Methods & Causal Hierarchy
 
 Mechanistic investigations progress through a five-stage workflow, transitioning from contrastive dataset construction to counterfactual evaluation:
 
 <div align="center">
-  <img src="diagrams/interpretability-methods.svg" alt="Mechanistic Interpretability Workflow and Causal Hierarchy" width="95%">
-  <p><em>Figure 2: Five-stage interpretability pipeline and the causal evidence hierarchy.</em></p>
+  <img src="diagrams/interpretability-workflow.svg" alt="Mechanistic Interpretability Workflow and Pipeline" width="95%">
+  <p><em>Figure 3: Five-stage interpretability workflow from contrastive input pairs to output evaluation.</em></p>
+</div>
+
+### Distinguishing Correlational Evidence from Causal Control
+
+A central epistemological contribution of this review is differentiating between **observational linear decodability** and **counterfactual causal execution**:
+
+<div align="center">
+  <img src="diagrams/probing-vs-intervention.svg" alt="Probing vs Causal Intervention Hierarchy" width="95%">
+  <p><em>Figure 4: Epistemological comparison: Observational probing vs counterfactual causal interventions in VLM safety.</em></p>
 </div>
 
 ### Causal Evidence Hierarchy:
 Methods in the literature offer fundamentally different levels of causal certainty:
 
 1. **Observational / Correlational (Linear Probing & Hidden State Decoding):**
-   - *Mechanism:* Trains linear classifiers ($W^T h_l$) to separate safe from unsafe activations.
+   - *Mechanism:* Trains linear classifiers ($W^T h_l + b$) to separate safe from unsafe activations.
    - *Evidentiary Value:* Proves that safety information is linearly decodable from hidden states.
    - *Limitation:* **Decodability does not imply execution.** The downstream model may completely ignore the probed feature during generation.
 2. **Semi-Causal / Necessity (Neuron Ablation & Parameter Pruning):**
@@ -156,7 +183,7 @@ Methods in the literature offer fundamentally different levels of causal certain
    - *Evidentiary Value:* Demonstrates that specific units are causally necessary for refusal behavior.
    - *Limitation:* May cause collateral damage to general language comprehension; models may also compensate via redundant parallel circuits.
 3. **Counterfactual Causal Control (Activation Steering, Revision & Subspace Projection):**
-   - *Mechanism:* Injects dynamic vectors or projects activations orthogonally during the forward pass ($h' = h + lpha v_{safe}$).
+   - *Mechanism:* Injects dynamic vectors or projects activations orthogonally during the forward pass ($h' = h + \alpha \cdot v_{safe}$ or $h' = P_\perp h$).
    - *Evidentiary Value:* Proves causal sufficiency by actively controlling output behavior at runtime, converting compliant jailbreaks into aligned refusals without fine-tuning weights.
 
 ### Text vs. Vision Representation Disparity:
@@ -164,7 +191,7 @@ A critical finding synthesized across the literature is the stark structural dis
 
 <div align="center">
   <img src="diagrams/safety-representation-flow.svg" alt="Safety Representation Flow: Text vs. Vision Disparity" width="95%">
-  <p><em>Figure 3: Representation disparity between localized text refusal and distributed visual safety (Li et al., 2026).</em></p>
+  <p><em>Figure 5: Representation disparity between localized text refusal and distributed visual safety (Li et al., 2026).</em></p>
 </div>
 
 - **Text Safety:** Highly localized. Li et al. (2026) report that text-based refusal concentrates in approximately **88 MLP neurons per model (<0.01% of units)** across 10 VLMs, with refusal dynamics governed by **~5 dominant GEVD directions**.
@@ -172,13 +199,13 @@ A critical finding synthesized across the literature is the stark structural dis
 
 ---
 
-## 6. PRISMA 2020 Screening Methodology
+## 7. PRISMA 2020 Screening Methodology
 
 This literature review adheres to the **PRISMA 2020 (Preferred Reporting Items for Systematic Reviews and Meta-Analyses)** framework (Page et al., 2021), employing a transparent, auditable **bounded captured-results protocol**.
 
 <div align="center">
   <img src="diagrams/prisma-flow.svg" alt="PRISMA 2020 Flow Diagram" width="90%">
-  <p><em>Figure 4: PRISMA 2020 flow diagram documenting exact audited identification, screening, and inclusion counts.</em></p>
+  <p><em>Figure 6: PRISMA 2020 flow diagram documenting exact audited identification, screening, and inclusion counts.</em></p>
 </div>
 
 ### Audited Selection Arithmetic
@@ -216,52 +243,51 @@ All record appearances were reconciled on 28 October 2026 against verified datab
 
 <div align="center">
   <img src="diagrams/screening-pipeline.svg" alt="Literature Screening Pipeline" width="90%">
-  <p><em>Figure 5: Screening and deduplication pipeline from raw queries to final synthesis matrix.</em></p>
+  <p><em>Figure 7: Screening and deduplication pipeline from raw queries to final synthesis matrix.</em></p>
 </div>
 
 *Detailed logs and per-study reasons are preserved in [`data/search-strategy.md`](data/search-strategy.md) and [`data/screening-records.csv`](data/screening-records.csv).*
 
 ---
 
-## 7. Research Paper Comparison Matrix
+## 8. Literature Comparison Matrix
 
 The table below summarizes the **eight core empirical VLM studies** synthesized in this review. All metrics are cited directly from original publications; no values have been estimated or mathematically pooled across differing benchmarks.
 
-| Study & Year | Research Objective | Method & Evaluated Models | Benchmark & Datasets | Reported Findings & Metrics | Critical Limitations & Gaps |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| **Li et al. (2026)**<br>*(EMNLP 2026)* | Compare text and visual safety pathways across 10 VLMs to determine if safety neurons are shared. | Neuron-level localization, iterative ablation, GEVD direction analysis across 10 open-source VLMs. | ViSafe-Detect and ViSafe-Eval (modality-isolated benchmarks). | Reports ~88 text-safety neurons per model (<0.01% of neurons). Text refusal effects concentrate in ~5 GEVD directions, while visual effects grow through 50 directions. | Specific to tested models, prompts, and refusal definitions; visual safety is not governed by a single universal safety neuron. |
-| **Xie et al. (2026)**<br>*(ICML 2026)* | Investigate safety-related circuits and transferability of adversarial jailbreaks across black-box models. | Linear probing and Safety Circuit Intervention Attack (SCIA); tested on 6 open-source and 3 commercial VLMs. | FigStep, MM-SafetyBench, and Hades jailbreak benchmarks. | Reports 59.7% average Attack Success Rate (ASR) across open-source models; shows perturbing safety circuits transfers across models. *(Attack metric, not defense)*. | Attack-oriented vulnerability study; does not provide a defensive mechanism or measure benign task utility preservation. |
-| **Fu et al. (2026)**<br>*(CVPR 2026)* | Identify unsafe internal channels and eliminate unsafe responses while preserving multimodal reasoning. | Causal mediation analysis and dual-modal safety-subspace projection (CARE). | Multiple multimodal safety benchmarks; unseen and adaptive attack sets. | Reports improved safety robustness and transfer to unseen/adaptive attacks while preserving general multimodal task performance; no pooled score inferred. | Projection quality depends heavily on contrastive subspace construction; requires standardized matched utility protocols. |
-| **Gupta & Chakraborty (2026)**<br>*(arXiv:2608.18628)* | Disentangle loss of visual grounding from refusal generation during safety alignment. | Hidden-state analysis, decoding dynamics, and targeted activation intervention. | Multiple VLM architectures; standard multimodal VQA and safety benchmarks. | Shows visual evidence remains influential in hidden states during safety abstention; targeted activation intervention restores grounded answering. | Restored answering is not automatically appropriate in all safety contexts; harmless abstention vs harmful compliance must be decoupled. |
-| **Li et al. (2025)**<br>*(AAAI 2025)* | Mitigate multimodal jailbreaks without updating model parameters or expensive retraining. | Layer- and attention-head-level activation revision using revision vectors (IAR). | SafeBench, Safe-Unsafe, Unsafe, and MM-SafetyBench. | Reported benchmark-specific ASR reductions: 48.94% on SafeBench, 34.34% on Safe-Unsafe, 43.92% on Unsafe, and 52.98% on MM-SafetyBench; minimal impact on helpfulness. | Effect size depends on benchmark calibration and revision-vector construction; requires testing against adaptive adversaries. |
-| **Shi et al. (2026)**<br>*(arXiv:2604.08881)* | Address coupled multilingual and multimodal safety vulnerabilities in foundation models. | Neuron-level identification and targeted parameter tuning / enhancement (Precise Shield). | Multilingual and multimodal safety evaluation suites. | Demonstrates targeted enhancement of safety-critical neurons improves safety across languages while preserving general reasoning capabilities. | Low-resource language coverage remains limited; requires independent multilingual red-teaming validation. |
-| **Wang et al. (2025)**<br>*(CVPR 2025)* | Defend vision-language models against image-based jailbreaks during inference. | ASTRA: Adaptive activation steering using transferable harmful-response representation directions. | Diverse multimodal jailbreak datasets across multiple VLM architectures and baselines. | Demonstrates empirical resistance across multiple attack types with limited degradation on benign user inputs. | Steering directions may be prompt- and model-dependent; needs testing against adaptive white-box attackers; separates defense from causal proof. |
-| **D’Incà et al. (2026)**<br>*(WACV 2026)* | Improve model safety while preserving pre-trained knowledge and safe-input capabilities. | SafeGround framework; activation-informed selection and negation of unsafe weights (UWM). | SafeGround benchmark and standard multimodal safety/utility evaluation suites. | Reports favorable safety-to-knowledge-preservation trade-off compared to fine-tuning and baseline parameter pruning. | Parameter manipulation is adjacent to, but distinct from, direct dynamic neuron-level causal intervention. |
+| Paper | Year | Method | Model / Benchmark | Key Findings | Limitations |
+| :--- | :---: | :--- | :--- | :--- | :--- |
+| **Li et al.**<br>*(EMNLP 2026)* | 2026 | Neuron-level localization, iterative ablation, GEVD direction analysis | 10 open-source VLMs;<br>ViSafe-Detect & ViSafe-Eval | Reports ~88 text-safety neurons per model (<0.01% of neurons). Text refusal effects concentrate in ~5 GEVD directions, while visual effects grow through 50 directions. | Specific to tested models, prompts, and refusal definitions; visual safety is not governed by a single universal safety neuron. |
+| **Xie et al.**<br>*(ICML 2026)* | 2026 | Linear probing and Safety Circuit Intervention Attack (SCIA) | 6 open-source, 3 commercial VLMs;<br>FigStep, MM-SafetyBench, Hades | Reports 59.7% average Attack Success Rate (ASR) across open-source models; shows perturbing safety circuits transfers across models. *(Attack metric, not defense)*. | Attack-oriented vulnerability study; does not provide a defensive mechanism or measure benign task utility preservation. |
+| **Fu et al.**<br>*(CVPR 2026)* | 2026 | Causal mediation analysis and dual-modal safety-subspace projection (CARE) | Multiple multimodal safety benchmarks; unseen & adaptive attack sets | Reports improved safety robustness and transfer to unseen/adaptive attacks while preserving general multimodal task performance. | Projection quality depends heavily on contrastive subspace construction; requires standardized matched utility protocols. |
+| **Gupta & Chakraborty**<br>*(arXiv:2608)* | 2026 | Hidden-state analysis, decoding dynamics, and targeted activation intervention | Multiple VLM architectures;<br>VQA & multimodal safety suites | Shows visual evidence remains influential in hidden states during safety abstention; targeted activation intervention restores grounded answering. | Restored answering is not automatically appropriate in all safety contexts; harmless abstention vs harmful compliance must be decoupled. |
+| **Li et al.**<br>*(AAAI 2025)* | 2025 | Layer- and attention-head-level activation revision using revision vectors (IAR) | SafeBench, Safe-Unsafe, Unsafe, MM-SafetyBench | Reported benchmark-specific ASR reductions: 48.94% on SafeBench, 34.34% on Safe-Unsafe, 43.92% on Unsafe, 52.98% on MM-SafetyBench. | Effect size depends on benchmark calibration and revision-vector construction; requires testing against adaptive adversaries. |
+| **Shi et al.**<br>*(arXiv:2604)* | 2026 | Neuron-level identification and targeted parameter tuning / enhancement (Precise Shield) | Multilingual & multimodal foundation models; cross-lingual suites | Demonstrates targeted enhancement of safety-critical neurons improves safety across languages while preserving general reasoning capabilities. | Low-resource language coverage remains limited; requires independent multilingual red-teaming validation. |
+| **Wang et al.**<br>*(CVPR 2025)* | 2025 | ASTRA: Adaptive activation steering using transferable harmful representation directions | Diverse multimodal jailbreak datasets across multiple VLM architectures | Demonstrates empirical resistance across multiple attack types with limited degradation on benign user inputs. | Steering directions may be prompt- and model-dependent; needs testing against adaptive white-box attackers; separates defense from causal proof. |
+| **D’Incà et al.**<br>*(WACV 2026)* | 2026 | SafeGround framework; activation-informed selection and negation of unsafe weights (UWM) | SafeGround benchmark and standard multimodal safety/utility suites | Reports favorable safety-to-knowledge-preservation trade-off compared to fine-tuning and baseline parameter pruning. | Parameter manipulation is adjacent to, but distinct from, direct dynamic neuron-level causal intervention. |
 
 *For deep-dive extraction profiles, language-only contextual studies, and excluded papers, see [`docs/paper-comparison.md`](docs/paper-comparison.md).*
 
 ---
 
-## 8. Key Thematic Findings
+## 9. Key Thematic Findings
 
 Synthesis across the eight core studies reveals five fundamental scientific insights:
 
 1. **No Universal Safety Switch:** While text refusal can be reliably tied to ~88 localized MLP neurons, visual safety is non-modular and distributed across dozens of representation directions (Li et al., 2026). The phrase "safety neuron" must never be used to imply a universal multimodal off-switch.
-2. **Probing Decodability $
-eq$ Downstream Causation:** Hidden-state probes easily achieve high linear accuracy separating safe from unsafe embeddings, but models frequently proceed to generate harmful outputs regardless. Dynamic interventions (ASTRA, CARE, IAR) provide the only reliable proof of causal control.
+2. **Probing Decodability $\neq$ Downstream Causation:** Hidden-state probes easily achieve high linear accuracy separating safe from unsafe embeddings, but models frequently proceed to generate harmful outputs regardless. Dynamic interventions (ASTRA, CARE, IAR) provide the only reliable proof of causal control.
 3. **Dual-Use Threat of Circuit Discovery:** Understanding internal safety circuits enables both defensive steering and devastating attack engineering. Xie et al. (2026) show that the Safety Circuit Intervention Attack (SCIA) perturbs identified circuits to achieve a 59.7% ASR across open-source and commercial models.
 4. **Safety Alignment Often Overrides Legitimate Vision:** When models abstain or refuse sensitive prompts, fine-grained visual comprehension remains active in early-to-mid layers (Gupta & Chakraborty, 2026). Late-layer alignment suppresses legitimate visual grounding, inducing catastrophic over-refusal.
 5. **Multilingual Brittleness:** Safety alignment established on English prompts fails to transfer robustly to lower-resource languages (Shi et al., 2026), creating cross-lingual backdoors in globally deployed multimodal systems.
 
 ---
 
-## 9. Evidence-Supported Research Gaps & Roadmap
+## 10. Evidence-Supported Research Gaps
 
 The literature exposes five urgent research frontiers required to transition mechanistic safety from post-hoc inspection to dependable deployment:
 
 <div align="center">
-  <img src="diagrams/research-gaps-map.svg" alt="Evidence-Supported Research Gaps Map" width="95%">
-  <p><em>Figure 6: Five evidence-supported research gaps and concrete future research agendas.</em></p>
+  <img src="diagrams/research-gaps.svg" alt="Evidence-Supported Research Gaps Map" width="95%">
+  <p><em>Figure 8: Five evidence-supported research gaps and concrete future research agendas.</em></p>
 </div>
 
 1. **Matched Cross-Modal Causal Experiments:** Replace arbitrary jailbreak images with semantically identical triplets (plain text, OCR image text, and visual scene) tested under uniform ablation and patching protocols with benign control images.
@@ -274,10 +300,20 @@ The literature exposes five urgent research frontiers required to transition mec
 
 ---
 
-## 10. Reproducibility, Evidence Ledger & Limitations
+## 11. Future Research Directions
+
+Separating proposed future research agendas from completed review evidence:
+
+- **Immediate Agenda (Next 12 Months):** Development of open-source benchmark suites with matched text-image-scene triplets; standardized reporting schemas for activation-steering vectors; and automated detection of visual over-refusal.
+- **Medium-Term Agenda (1–3 Years):** Training-time architectural innovations integrating sparse autoencoder (SAE) feature dictionaries directly into cross-modal projectors, eliminating the need for post-hoc steering.
+- **Long-Term Agenda:** Mathematically verified multimodal alignment bounds providing formal guarantees against adversarial representation shifts.
+
+---
+
+## 12. Reproducibility & Methodological Limitations
 
 ### Inspectable Repository Artifacts
-- **Full Text Reports:** Microsoft Word report [`report/final-review.docx`](report/final-review.docx) and GitHub Flavored Markdown [`report/final-review.md`](report/final-review.md).
+- **Full Text Reports:** Microsoft Word report [`report/final-review.docx`](report/final-review.docx), Adobe PDF [`report/final-review.pdf`](report/final-review.pdf), and GitHub Flavored Markdown [`report/final-review.md`](report/final-review.md).
 - **Audit Ledgers:** Full 46-record identification ledger [`data/screening-records.csv`](data/screening-records.csv) and 38-study decision ledger [`data/unique-record-decisions.csv`](data/unique-record-decisions.csv).
 - **Search Strategy:** Exact query syntax, date constraints, and displayed counts [`data/search-strategy.md`](data/search-strategy.md).
 - **Core Synthesis Data:** Structured 8-study extraction table [`data/study-comparison.csv`](data/study-comparison.csv).
@@ -292,17 +328,22 @@ The literature exposes five urgent research frontiers required to transition mec
 
 ---
 
-## 11. Repository Navigation Matrix
+## 13. Repository Navigation Matrix
+
+<div align="center">
+  <img src="assets/research-overview.svg" alt="Repository Research Overview" width="95%">
+  <p><em>Figure 9: Integrated overview of research objectives, questions, methodology, and deliverables.</em></p>
+</div>
 
 | Directory / File | Description & Link | File Type |
 | :--- | :--- | :--- |
 | **`README.md`** | Primary academic homepage with complete synthesis overview | Markdown |
 | **`index.html`** | [Standalone Responsive GitHub Pages Research Portal](https://snigdha-0210.github.io/DL_Safety_neuron_in_VisionModel/) | HTML5 / CSS3 / JS |
-| **`report/`** | [Course Report (final-review.docx)](report/final-review.docx) &bull; [Markdown Report (final-review.md)](report/final-review.md) | DOCX / Markdown |
-| **`diagrams/`** | [Architecture](diagrams/vlm-architecture.svg) &bull; [Methods](diagrams/interpretability-methods.svg) &bull; [Representation Flow](diagrams/safety-representation-flow.svg) &bull; [PRISMA Flow](diagrams/prisma-flow.svg) &bull; [Pipeline](diagrams/screening-pipeline.svg) &bull; [Gaps](diagrams/research-gaps-map.svg) | Scalable Vector Graphics |
-| **`assets/`** | [Banner](assets/banner.svg) &bull; [Methodology Overview](assets/methodology-overview.svg) &bull; [Research Summary](assets/research-summary.svg) | Scalable Vector Graphics |
+| **`report/`** | [Course Report (PDF)](report/final-review.pdf) &bull; [Course Report (DOCX)](report/final-review.docx) &bull; [Markdown Report](report/final-review.md) | PDF / DOCX / MD |
+| **`diagrams/`** | [Architecture](diagrams/vlm-architecture.svg) &bull; [Workflow](diagrams/interpretability-workflow.svg) &bull; [Probing vs Intervention](diagrams/probing-vs-intervention.svg) &bull; [Representation Flow](diagrams/safety-representation-flow.svg) &bull; [PRISMA Flow](diagrams/prisma-flow.svg) &bull; [Pipeline](diagrams/screening-pipeline.svg) &bull; [Gaps](diagrams/research-gaps.svg) | SVG Graphics |
+| **`assets/`** | [Banner](assets/research-banner.svg) &bull; [Graphical Abstract](assets/graphical-abstract.svg) &bull; [Research Overview](assets/research-overview.svg) &bull; [Research Summary](assets/research-summary.svg) | SVG Graphics |
 | **`data/`** | [Study Matrix (CSV)](data/study-comparison.csv) &bull; [Screening Ledger (CSV)](data/screening-records.csv) &bull; [Decisions (CSV)](data/unique-record-decisions.csv) &bull; [Search Strategy](data/search-strategy.md) | CSV / Markdown |
-| **`docs/`** | [Intro](docs/introduction.md) &bull; [RQs](docs/research-questions.md) &bull; [Methodology](docs/methodology.md) &bull; [Paper Matrix](docs/paper-comparison.md) &bull; [Findings](docs/key-findings.md) &bull; [Gaps](docs/research-gaps.md) &bull; [Limitations](docs/limitations.md) &bull; [References](docs/references.md) | Markdown Documentation |
+| **`docs/`** | [Intro](docs/introduction.md) &bull; [RQs](docs/research-questions.md) &bull; [Methodology](docs/methodology.md) &bull; [Paper Matrix](docs/paper-comparison.md) &bull; [Findings](docs/key-findings.md) &bull; [Gaps](docs/research-gaps.md) &bull; [Limitations](docs/limitations.md) &bull; [References](docs/references.md) | Markdown Docs |
 | **`references/`** | [Master BibTeX Bibliography (all 16 papers + PRISMA)](references/bibliography.bib) | BibTeX |
 | **`CITATION.cff`** | [Machine-readable citation metadata](CITATION.cff) | YAML / CFF |
 | **`LICENSE`** | [CC BY 4.0 (Text & Diagrams) / MIT (Code & Automation)](LICENSE) | Plaintext |
@@ -311,7 +352,7 @@ The literature exposes five urgent research frontiers required to transition mec
 
 ---
 
-## 12. Citation & Acknowledgements
+## 14. Citation & Acknowledgements
 
 ### Cite This Review
 If you utilize this literature review, conceptual diagrams, or data ledgers in your research, please cite:

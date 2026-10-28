@@ -87,3 +87,4 @@ Why is it currently impossible to conduct a definitive meta-analysis of VLM safe
 - **Neglect of Over-Refusal & Grounding:** Many proposed safety interventions suppress harmful compliance by simply driving the model into an indiscriminate refusal mode, severely degrading visual grounding and benign question answering.
 - **Lack of Adaptive Threat Modeling:** Most defenses are evaluated only against static prompt libraries; few test resilience against white-box adversaries who have full knowledge of the intervention vectors.
 - **Missing Low-Resource Multilingual Evidence:** While Shi et al. (2026) examine multilingual safety neuron enhancement, evaluation is skewed toward major languages, leaving low-resource cross-lingual vulnerability unexplored.
+

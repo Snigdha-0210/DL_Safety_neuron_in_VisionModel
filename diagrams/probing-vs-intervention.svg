@@ -1,0 +1,228 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1140 820" width="100%" height="100%">
+  <defs>
+    <linearGradient id="pviBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080e1e"/>
+      <stop offset="50%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#141c30"/>
+    </linearGradient>
+    <linearGradient id="pviCard1" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="correlGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#818cf8"/>
+      <stop offset="100%" stop-color="#c084fc"/>
+    </linearGradient>
+    <linearGradient id="causalGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00f5d4"/>
+      <stop offset="100%" stop-color="#38bdf8"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1140" height="820" fill="url(#pviBg)"/>
+
+  <!-- Title & Academic Subtitle -->
+  <g transform="translate(50, 38)">
+    <rect x="0" y="0" width="220" height="24" rx="4" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+    <text x="110" y="16" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="10.5" font-weight="700" fill="#00f5d4" text-anchor="middle">EPISTEMOLOGICAL HIERARCHY</text>
+
+    <text x="0" y="52" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="21" font-weight="800" fill="#ffffff" letter-spacing="-0.3">
+      Linear Probing vs. Causal Intervention in VLM Safety Interpretability
+    </text>
+    <text x="0" y="74" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="12" font-weight="400" fill="#94a3b8">
+      Contrasting observational feature decodability with counterfactual necessity, causal mediation, and dynamic steering control.
+    </text>
+  </g>
+
+  <!-- Section 1: Observational / Correlational Probing (Upper Track) -->
+  <g transform="translate(50, 125)">
+    <!-- Track Frame -->
+    <rect x="0" y="0" width="1040" height="225" rx="10" fill="url(#pviCard1)" stroke="#818cf8" stroke-width="1.2"/>
+    <rect x="0" y="0" width="1040" height="32" rx="10" fill="#1e293b"/>
+    <circle cx="20" cy="16" r="7" fill="#818cf8"/>
+    <text x="35" y="20" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="11" font-weight="700" fill="#818cf8">TRACK A: OBSERVATIONAL PROBING (CORRELATIONAL EVIDENCE)</text>
+    <text x="1020" y="20" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="10" font-weight="600" fill="#cbd5e1" text-anchor="end">Does NOT modify forward pass • Measures decodability only</text>
+
+    <!-- Sub-stages in Track A -->
+    <!-- Step A1: Contrastive Input -->
+    <g transform="translate(20, 48)">
+      <rect x="0" y="0" width="180" height="95" rx="8" fill="#0f172a" stroke="#475569" stroke-width="1"/>
+      <text x="90" y="22" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="10.5" font-weight="700" fill="#c7d2fe" text-anchor="middle">Input Pairs</text>
+      <text x="90" y="42" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9.5" fill="#94a3b8" text-anchor="middle">Harmful query + Benign query</text>
+      <text x="90" y="58" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9.5" fill="#94a3b8" text-anchor="middle">(Text or Image Prompt)</text>
+      <rect x="25" y="70" width="130" height="18" rx="4" fill="#1e293b"/>
+      <text x="90" y="82" font-family="monospace" font-size="9" fill="#818cf8" text-anchor="middle">(x_safe, x_harm)</text>
+    </g>
+
+    <!-- Arrow A1 -> A2 -->
+    <path d="M 205 95 L 225 95" stroke="#64748b" stroke-width="2"/>
+
+    <!-- Step A2: Unmodified Forward Pass -->
+    <g transform="translate(225, 48)">
+      <rect x="0" y="0" width="200" height="95" rx="8" fill="#0f172a" stroke="#475569" stroke-width="1"/>
+      <text x="100" y="22" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="10.5" font-weight="700" fill="#c7d2fe" text-anchor="middle">Unperturbed Forward Pass</text>
+      <text x="100" y="42" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9.5" fill="#94a3b8" text-anchor="middle">Extract hidden activation:</text>
+      <text x="100" y="60" font-family="monospace" font-size="11" font-weight="700" fill="#a5b4fc" text-anchor="middle">h_l ∈ ℝ^(d_model)</text>
+      <text x="100" y="80" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9" fill="#64748b" text-anchor="middle">(No weights or states modified)</text>
+    </g>
+
+    <!-- Arrow A2 -> A3 -->
+    <path d="M 430 95 L 450 95" stroke="#64748b" stroke-width="2"/>
+
+    <!-- Step A3: Train Linear Probe -->
+    <g transform="translate(450, 48)">
+      <rect x="0" y="0" width="220" height="95" rx="8" fill="#0f172a" stroke="#818cf8" stroke-width="1.2"/>
+      <text x="110" y="22" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="10.5" font-weight="700" fill="#818cf8" text-anchor="middle">Train Linear Probe Classifier</text>
+      <text x="110" y="42" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9.5" fill="#cbd5e1" text-anchor="middle">Logistic / Linear Separation:</text>
+      <rect x="25" y="48" width="170" height="20" rx="4" fill="#1e1e38"/>
+      <text x="110" y="62" font-family="monospace" font-size="9.5" font-weight="700" fill="#00f5d4" text-anchor="middle">p(safe) = σ(w^T h_l + b)</text>
+      <text x="110" y="84" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9" fill="#94a3b8" text-anchor="middle">Probe AUROC / Separability Score</text>
+    </g>
+
+    <!-- Arrow A3 -> A4 -->
+    <path d="M 675 95 L 695 95" stroke="#64748b" stroke-width="2"/>
+
+    <!-- Step A4: Evidentiary Claim & Critical Flaw -->
+    <g transform="translate(695, 48)">
+      <rect x="0" y="0" width="325" height="95" rx="8" fill="#181226" stroke="#f43f5e" stroke-width="1.2"/>
+      <text x="162" y="20" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="10" font-weight="700" fill="#fda4af" text-anchor="middle">EVIDENTIARY VALUE &amp; LIMITATION</text>
+      <text x="15" y="40" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9.5" font-weight="700" fill="#38bdf8">✓ Establishes:</text>
+      <text x="85" y="40" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9.5" fill="#e2e8f0">Linear decodability of safety features.</text>
+      <text x="15" y="60" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9.5" font-weight="700" fill="#f43f5e">✗ Critical Flaw:</text>
+      <text x="98" y="60" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9.5" font-weight="700" fill="#fecdd3">DECODABILITY ≠ CAUSATION</text>
+      <text x="15" y="76" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9" fill="#fda4af">Downstream layers may completely ignore the probed feature.</text>
+      <text x="15" y="88" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9" fill="#fda4af">Passive detection cannot prevent jailbreak generation.</text>
+    </g>
+
+    <!-- Callout Bar across bottom of Track A -->
+    <g transform="translate(20, 155)">
+      <rect x="0" y="0" width="1000" height="55" rx="6" fill="#0b0f19" stroke="#334155" stroke-width="1"/>
+      <text x="15" y="20" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="10" font-weight="700" fill="#818cf8">DUAL-USE VULNERABILITY ALERT (Xie et al., ICML 2026):</text>
+      <text x="15" y="38" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9.5" fill="#cbd5e1">
+        Probe-discovered safety circuits can be weaponized against foundation models. The Safety Circuit Intervention Attack (SCIA) perturbs
+        probe-identified safety circuits, achieving a <tspan fill="#f43f5e" font-weight="700">59.7% average Attack Success Rate (ASR)</tspan> that transfers effectively across black-box commercial VLMs.
+      </text>
+    </g>
+  </g>
+
+  <!-- Section 2: Counterfactual Causal Interventions (Middle Track) -->
+  <g transform="translate(50, 365)">
+    <!-- Track Frame -->
+    <rect x="0" y="0" width="1040" height="235" rx="10" fill="url(#pviCard1)" stroke="#00f5d4" stroke-width="1.2"/>
+    <rect x="0" y="0" width="1040" height="32" rx="10" fill="#042f2e"/>
+    <circle cx="20" cy="16" r="7" fill="#00f5d4"/>
+    <text x="35" y="20" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="11" font-weight="700" fill="#00f5d4">TRACK B: COUNTERFACTUAL CAUSAL INTERVENTIONS (CAUSAL CONTROL &amp; SUFFICIENCY)</text>
+    <text x="1020" y="20" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="10" font-weight="600" fill="#a7f3d0" text-anchor="end">Directly manipulates runtime activations • Controls output generation</text>
+
+    <!-- 4 Intervention Modalities Side-by-Side -->
+    <g transform="translate(18, 45)">
+      <!-- 1. Neuron Ablation -->
+      <rect x="0" y="0" width="235" height="115" rx="8" fill="#0f172a" stroke="#38bdf8" stroke-width="1"/>
+      <text x="117" y="18" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="10.5" font-weight="700" fill="#38bdf8" text-anchor="middle">1. Targeted Neuron Ablation</text>
+      <rect x="25" y="28" width="185" height="22" rx="4" fill="#1e293b"/>
+      <text x="117" y="42" font-family="monospace" font-size="10" font-weight="700" fill="#38bdf8" text-anchor="middle">h_(i,l) := 0  (Zero-Out)</text>
+      <text x="12" y="65" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9" font-weight="700" fill="#e2e8f0">• Claim:</text>
+      <text x="52" y="65" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9" fill="#94a3b8">Tests Causal Necessity</text>
+      <text x="12" y="80" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="8.5" fill="#cbd5e1">Disables refusal when text safety</text>
+      <text x="12" y="92" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="8.5" fill="#cbd5e1">neurons (~88 units) are ablated.</text>
+      <text x="12" y="106" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="8.5" fill="#f59e0b">Li et al. (EMNLP 2026)</text>
+
+      <!-- 2. Activation Patching -->
+      <rect x="250" y="0" width="235" height="115" rx="8" fill="#0f172a" stroke="#a78bfa" stroke-width="1"/>
+      <text x="367" y="18" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="10.5" font-weight="700" fill="#a78bfa" text-anchor="middle">2. Activation Patching / Swap</text>
+      <rect x="275" y="28" width="185" height="22" rx="4" fill="#1e293b"/>
+      <text x="367" y="42" font-family="monospace" font-size="10" font-weight="700" fill="#a78bfa" text-anchor="middle">h_(l)^harm ← h_(l)^clean</text>
+      <text x="262" y="65" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9" font-weight="700" fill="#e2e8f0">• Claim:</text>
+      <text x="302" y="65" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9" fill="#94a3b8">Tests Causal Mediation</text>
+      <text x="262" y="80" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="8.5" fill="#cbd5e1">Restores >90% refusal performance</text>
+      <text x="262" y="92" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="8.5" fill="#cbd5e1">by isolating clean safety circuits.</text>
+      <text x="262" y="106" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="8.5" fill="#f59e0b">Chen et al. (NeurIPS 2025)</text>
+
+      <!-- 3. Dynamic Steering & Revision -->
+      <rect x="500" y="0" width="245" height="115" rx="8" fill="#0f172a" stroke="#00f5d4" stroke-width="1.2"/>
+      <text x="622" y="18" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="10.5" font-weight="700" fill="#00f5d4" text-anchor="middle">3. Dynamic Activation Steering</text>
+      <rect x="525" y="28" width="195" height="22" rx="4" fill="#042f2e"/>
+      <text x="622" y="42" font-family="monospace" font-size="10" font-weight="700" fill="#00f5d4" text-anchor="middle">h' = h + α · v_safe</text>
+      <text x="512" y="65" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9" font-weight="700" fill="#e2e8f0">• Claim:</text>
+      <text x="552" y="65" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9" fill="#94a3b8">Counterfactual Output Control</text>
+      <text x="512" y="80" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="8.5" fill="#cbd5e1">ASTRA (Wang 2025) &amp; IAR (Li 2025)</text>
+      <text x="512" y="92" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="8.5" fill="#cbd5e1">shift activations away from harm.</text>
+      <text x="512" y="106" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="8.5" fill="#a7f3d0">Cuts ASR 34%–53% with zero fine-tuning</text>
+
+      <!-- 4. Subspace Projection -->
+      <rect x="760" y="0" width="240" height="115" rx="8" fill="#0f172a" stroke="#f59e0b" stroke-width="1"/>
+      <text x="880" y="18" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="10.5" font-weight="700" fill="#f59e0b" text-anchor="middle">4. Dual-Modal Subspace Projection</text>
+      <rect x="785" y="28" width="190" height="22" rx="4" fill="#1e293b"/>
+      <text x="880" y="42" font-family="monospace" font-size="10" font-weight="700" fill="#f59e0b" text-anchor="middle">h' = P_⊥ · h = (I - U U^T) h</text>
+      <text x="772" y="65" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9" font-weight="700" fill="#e2e8f0">• Claim:</text>
+      <text x="812" y="65" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9" fill="#94a3b8">Unsafe Channel Elimination</text>
+      <text x="772" y="80" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="8.5" fill="#cbd5e1">CARE (Fu et al., CVPR 2026)</text>
+      <text x="772" y="92" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="8.5" fill="#cbd5e1">removes unsafe visual directions</text>
+      <text x="772" y="106" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="8.5" fill="#fde68a">Preserves general multimodal reasoning</text>
+    </g>
+
+    <!-- Observation & Output Generation Box -->
+    <g transform="translate(18, 170)">
+      <rect x="0" y="0" width="1004" height="52" rx="6" fill="#042f2e" stroke="#00f5d4" stroke-width="1"/>
+      <text x="15" y="20" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="10" font-weight="700" fill="#00f5d4">DOWNSTREAM GENERATION VERIFICATION:</text>
+      <text x="15" y="38" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9.5" fill="#a7f3d0">
+        Interventions are validated at the output token generation level: jailbreak queries that elicited compliance are successfully converted
+        into compliant refusals, while benign queries retain grounded visual reasoning and standard VQA accuracy.
+      </text>
+    </g>
+  </g>
+
+  <!-- Section 3: Comparative Synthesis Matrix (Bottom Table) -->
+  <g transform="translate(50, 615)">
+    <rect x="0" y="0" width="1040" height="175" rx="8" fill="#0f172a" stroke="#334155" stroke-width="1.2"/>
+    
+    <!-- Table Header Row -->
+    <rect x="0" y="0" width="1040" height="28" rx="8" fill="#1e293b"/>
+    <text x="110" y="18" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9.5" font-weight="700" fill="#cbd5e1" text-anchor="middle">Evaluation Dimension</text>
+    <text x="310" y="18" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9.5" font-weight="700" fill="#818cf8" text-anchor="middle">Linear Probing</text>
+    <text x="510" y="18" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9.5" font-weight="700" fill="#38bdf8" text-anchor="middle">Neuron Ablation</text>
+    <text x="710" y="18" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9.5" font-weight="700" fill="#a78bfa" text-anchor="middle">Activation Patching</text>
+    <text x="920" y="18" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9.5" font-weight="700" fill="#00f5d4" text-anchor="middle">Dynamic Steering / Projection</text>
+
+    <!-- Row 1: Target Question -->
+    <line x1="0" y1="28" x2="1040" y2="28" stroke="#334155" stroke-width="1"/>
+    <text x="15" y="47" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9" font-weight="700" fill="#94a3b8">Target Question</text>
+    <text x="310" y="47" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="8.5" fill="#cbd5e1" text-anchor="middle">Is safety info linearly present?</text>
+    <text x="510" y="47" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="8.5" fill="#cbd5e1" text-anchor="middle">Is neuron necessary for refusal?</text>
+    <text x="710" y="47" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="8.5" fill="#cbd5e1" text-anchor="middle">Which circuit mediates refusal?</text>
+    <text x="920" y="47" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="8.5" fill="#a7f3d0" text-anchor="middle">Can we steer safety at runtime?</text>
+
+    <!-- Row 2: Modifies Computation? -->
+    <line x1="0" y1="58" x2="1040" y2="58" stroke="#334155" stroke-width="1"/>
+    <text x="15" y="77" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9" font-weight="700" fill="#94a3b8">Modifies Forward Pass?</text>
+    <text x="310" y="77" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="8.5" font-weight="600" fill="#64748b" text-anchor="middle">No (Passive Readout)</text>
+    <text x="510" y="77" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="8.5" font-weight="600" fill="#38bdf8" text-anchor="middle">Yes (Zeroes hidden states)</text>
+    <text x="710" y="77" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="8.5" font-weight="600" fill="#a78bfa" text-anchor="middle">Yes (Swaps clean/harm states)</text>
+    <text x="920" y="77" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="8.5" font-weight="700" fill="#00f5d4" text-anchor="middle">Yes (Shifts / projects vector)</text>
+
+    <!-- Row 3: Output Evaluation -->
+    <line x1="0" y1="88" x2="1040" y2="88" stroke="#334155" stroke-width="1"/>
+    <text x="15" y="107" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9" font-weight="700" fill="#94a3b8">Downstream Output Effect</text>
+    <text x="310" y="107" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="8.5" fill="#fca5a5" text-anchor="middle">None (Output unmeasured)</text>
+    <text x="510" y="107" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="8.5" fill="#cbd5e1" text-anchor="middle">Loss of refusal on text prompts</text>
+    <text x="710" y="107" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="8.5" fill="#cbd5e1" text-anchor="middle">Restores safe refusal behavior</text>
+    <text x="920" y="107" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="8.5" fill="#a7f3d0" text-anchor="middle">Converts jailbreaks to safe refusals</text>
+
+    <!-- Row 4: Evidence Strength -->
+    <line x1="0" y1="118" x2="1040" y2="118" stroke="#334155" stroke-width="1"/>
+    <text x="15" y="137" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9" font-weight="700" fill="#94a3b8">Epistemic Evidence Level</text>
+    <text x="310" y="137" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="8.5" font-weight="700" fill="#f43f5e" text-anchor="middle">Correlational (Weakest)</text>
+    <text x="510" y="137" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="8.5" font-weight="600" fill="#f59e0b" text-anchor="middle">Causal Necessity (Moderate)</text>
+    <text x="710" y="137" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="8.5" font-weight="600" fill="#a78bfa" text-anchor="middle">Causal Mediation (Strong)</text>
+    <text x="920" y="137" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="8.5" font-weight="800" fill="#00f5d4" text-anchor="middle">Counterfactual Control (Strongest)</text>
+
+    <!-- Row 5: Primary Literature -->
+    <line x1="0" y1="148" x2="1040" y2="148" stroke="#334155" stroke-width="1"/>
+    <text x="15" y="167" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="9" font-weight="700" fill="#94a3b8">Primary Literature</text>
+    <text x="310" y="167" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="8.5" fill="#94a3b8" text-anchor="middle">Xie (2026), Aravindan (2025)</text>
+    <text x="510" y="167" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="8.5" fill="#94a3b8" text-anchor="middle">Li et al. (2026)</text>
+    <text x="710" y="167" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="8.5" fill="#94a3b8" text-anchor="middle">Chen (2025), Rathi (2024)</text>
+    <text x="920" y="167" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="8.5" fill="#94a3b8" text-anchor="middle">Fu (2026), Wang (2025), Li (2025)</text>
+  </g>
+</svg>
